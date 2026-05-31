@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Beetle — Academic Resources</title>
-    <meta name="description" content="Black Beetle — Your one-stop hub for semester notes, assignments, and previous year question papers.">
+    <title> Black Beetle </title>
+    <meta name="description" content="Black Beetle - hub for semester notes, assignments, and previous year question papers.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -121,7 +121,6 @@
         .card{
             position:relative;
             background:var(--bg-card);border:1px solid var(--border);border-radius:18px;
-            padding:28px 24px;
             transition:all .35s cubic-bezier(.4,0,.2,1);
             overflow:hidden;
         }
@@ -136,6 +135,11 @@
             box-shadow:0 20px 50px rgba(0,0,0,.3),0 0 30px var(--glow);
         }
         .card:hover::before{opacity:1}
+        .card-link{
+            display:block;text-decoration:none;color:inherit;
+            padding:28px 24px;cursor:pointer;
+        }
+        .card:not(:has(.card-link)){padding:28px 24px}
         .card-icon{
             width:48px;height:48px;border-radius:12px;
             background:linear-gradient(135deg,var(--accent-1),var(--accent-2));
@@ -146,14 +150,14 @@
             font-size:1.1rem;font-weight:700;margin-bottom:10px;color:#fff;
             background:none;-webkit-text-fill-color:unset;
         }
-        .card a{
+        .card-label{
             display:inline-flex;align-items:center;gap:6px;
-            color:var(--accent-1);text-decoration:none;font-weight:600;font-size:.9rem;
+            color:var(--accent-1);font-weight:600;font-size:.9rem;
             transition:all .2s;
         }
-        .card a:hover{color:var(--accent-3);gap:10px}
-        .card a::after{content:'→';transition:transform .2s}
-        .card a:hover::after{transform:translateX(3px)}
+        .card-label::after{content:'→';transition:transform .2s}
+        .card:hover .card-label{color:var(--accent-3);gap:10px}
+        .card:hover .card-label::after{transform:translateX(3px)}
 
         /* Papers special layout */
         .papers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
@@ -244,24 +248,32 @@
             </div>
             <div class="cards-grid">
                 <div class="card reveal">
-                    <div class="card-icon">📖</div>
-                    <h3>1st Semester</h3>
-                    <a href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing">View Notes</a>
+                    <a class="card-link" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank">
+                        <div class="card-icon">📖</div>
+                        <h3>1st Semester</h3>
+                        <span class="card-label">View Notes</span>
+                    </a>
                 </div>
                 <div class="card reveal">
-                    <div class="card-icon">📖</div>
-                    <h3>2nd Semester</h3>
-                    <a href="https://drive.google.com/drive/folders/1vDP4evjZf9xndmd0HPOW01M0nqN-hrC1?usp=drive_link">View Notes</a>
+                    <a class="card-link" href="https://drive.google.com/drive/folders/1vDP4evjZf9xndmd0HPOW01M0nqN-hrC1?usp=drive_link" target="_blank">
+                        <div class="card-icon">📖</div>
+                        <h3>2nd Semester</h3>
+                        <span class="card-label">View Notes</span>
+                    </a>
                 </div>
                 <div class="card reveal">
-                    <div class="card-icon">📖</div>
-                    <h3>3rd Semester</h3>
-                    <a href="https://drive.google.com/drive/folders/1bMeZlwaUmt26qlUtL8cHTkr6cDeeiVQ8?usp=sharing">View Notes</a>
+                    <a class="card-link" href="https://drive.google.com/drive/folders/1bMeZlwaUmt26qlUtL8cHTkr6cDeeiVQ8?usp=sharing" target="_blank">
+                        <div class="card-icon">📖</div>
+                        <h3>3rd Semester</h3>
+                        <span class="card-label">View Notes</span>
+                    </a>
                 </div>
                 <div class="card reveal">
-                    <div class="card-icon">📖</div>
-                    <h3>4th Semester</h3>
-                    <a href="https://drive.google.com/drive/folders/1CyPFCm2tVKx39tJ_jyJsa7wzx43-fGUh?usp=sharing">View Notes</a>
+                    <a class="card-link" href="https://drive.google.com/drive/folders/1CyPFCm2tVKx39tJ_jyJsa7wzx43-fGUh?usp=sharing" target="_blank">
+                        <div class="card-icon">📖</div>
+                        <h3>4th Semester</h3>
+                        <span class="card-label">View Notes</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -276,24 +288,32 @@
             </div>
             <div class="cards-grid">
                 <div class="card reveal">
-                    <div class="card-icon">✏️</div>
-                    <h3>1st Semester</h3>
-                    <a href="https://drive.google.com/drive/folders/1r8fxf8IS6_gobTGEzcpifryC9dNsFywy?usp=sharing">View Assignments</a>
+                    <a class="card-link" href="https://drive.google.com/drive/folders/1r8fxf8IS6_gobTGEzcpifryC9dNsFywy?usp=sharing" target="_blank">
+                        <div class="card-icon">✏️</div>
+                        <h3>1st Semester</h3>
+                        <span class="card-label">View Assignments</span>
+                    </a>
                 </div>
                 <div class="card reveal">
-                    <div class="card-icon">✏️</div>
-                    <h3>2nd Semester</h3>
-                    <a href="https://drive.google.com/drive/folders/1hDeZNAMbaYvR2z-lK2xbc2G9ul_rU9D5?usp=sharing">View Assignments</a>
+                    <a class="card-link" href="https://drive.google.com/drive/folders/1hDeZNAMbaYvR2z-lK2xbc2G9ul_rU9D5?usp=sharing" target="_blank">
+                        <div class="card-icon">✏️</div>
+                        <h3>2nd Semester</h3>
+                        <span class="card-label">View Assignments</span>
+                    </a>
                 </div>
                 <div class="card reveal">
-                    <div class="card-icon">✏️</div>
-                    <h3>3rd Semester</h3>
-                    <a href="https://drive.google.com/drive/folders/1Q7LmkJYACjG4j392QNZS9GJjgZCH19e3?usp=sharing">View Assignments</a>
+                    <a class="card-link" href="https://drive.google.com/drive/folders/1Q7LmkJYACjG4j392QNZS9GJjgZCH19e3?usp=sharing" target="_blank">
+                        <div class="card-icon">✏️</div>
+                        <h3>3rd Semester</h3>
+                        <span class="card-label">View Assignments</span>
+                    </a>
                 </div>
                 <div class="card reveal">
-                    <div class="card-icon">✏️</div>
-                    <h3>4th Semester</h3>
-                    <a href="https://drive.google.com/drive/folders/1yhRVIxWHwqyvuPdfJgkQbhSQXdU3cky9?usp=sharing">View Assignments</a>
+                    <a class="card-link" href="https://drive.google.com/drive/folders/1yhRVIxWHwqyvuPdfJgkQbhSQXdU3cky9?usp=sharing" target="_blank">
+                        <div class="card-icon">✏️</div>
+                        <h3>4th Semester</h3>
+                        <span class="card-label">View Assignments</span>
+                    </a>
                 </div>
             </div>
         </div>
