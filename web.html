@@ -234,7 +234,6 @@
     <section id="home" class="hero">
         <div class="hero-badge"><span class="dot"></span> Academic Resource Hub</div>
         <h1>Black Beetle</h1>
-        <p>Your one-stop destination for semester notes, assignments, and previous year question papers.</p>
         <a href="#notes" class="hero-cta">Explore Resources ↓</a>
         <div class="scroll-hint"><span>↓</span>Scroll to explore</div>
     </section>
@@ -244,7 +243,6 @@
         <div class="section-inner">
             <div class="section-header reveal">
                 <h2>📚 Notes</h2>
-                <p>Comprehensive study material for every semester</p>
             </div>
             <div class="cards-grid">
                 <div class="card reveal">
@@ -352,7 +350,7 @@
     </section>
 
     <footer>
-        <p>Built with 💜 by <span>Black Beetle</span></p>
+        <p><span>Black Beetle</span></p>
     </footer>
 
     <script>
@@ -360,6 +358,17 @@
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         let particles = [];
+        let mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
         function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
         resize(); addEventListener('resize', resize);
 
@@ -369,14 +378,33 @@
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.r = Math.random() * 1.5 + 0.5;
-                this.vx = (Math.random() - 0.5) * 0.3;
-                this.vy = (Math.random() - 0.5) * 0.3;
+                this.baseVx = (Math.random() - 0.5) * 0.3;
+                this.baseVy = (Math.random() - 0.5) * 0.3;
+                this.vx = this.baseVx;
+                this.vy = this.baseVy;
                 this.alpha = Math.random() * 0.4 + 0.1;
             }
             update() {
+                if (mouse.x != null && mouse.y != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        this.vx -= forceDirectionX * force * 0.6;
+                        this.vy -= forceDirectionY * force * 0.6;
+                    }
+                }
+                
+                this.vx = this.vx * 0.95 + this.baseVx * 0.05;
+                this.vy = this.vy * 0.95 + this.baseVy * 0.05;
+                
                 this.x += this.vx; this.y += this.vy;
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                
+                if (this.x < 0 || this.x > canvas.width) { this.baseVx *= -1; this.vx *= -1; this.x = Math.max(0, Math.min(this.x, canvas.width)); }
+                if (this.y < 0 || this.y > canvas.height) { this.baseVy *= -1; this.vy *= -1; this.y = Math.max(0, Math.min(this.y, canvas.height)); }
             }
             draw() {
                 ctx.beginPath();
@@ -389,6 +417,18 @@
 
         function drawLines() {
             for (let i = 0; i < particles.length; i++) {
+                if (mouse.x != null && mouse.y != null) {
+                    const dx = particles[i].x - mouse.x;
+                    const dy = particles[i].y - mouse.y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+                    if (d < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = `rgba(168,85,247,${0.15 * (1 - d / 150)})`;
+                        ctx.stroke();
+                    }
+                }
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
                     const dy = particles[i].y - particles[j].y;
