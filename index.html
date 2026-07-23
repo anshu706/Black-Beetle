@@ -1,887 +1,827 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Black Beetle</title>
-    <meta
-      name="description"
-      content="Black Beetle - hub for semester notes, assignments, and previous year question papers."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      :root {
-        --bg-primary: #0a0a0f;
-        --bg-card: rgba(255, 255, 255, 0.04);
-        --bg-card-hover: rgba(255, 255, 255, 0.08);
-        --bg-glass: rgba(255, 255, 255, 0.06);
-        --border: rgba(255, 255, 255, 0.08);
-        --border-hover: rgba(168, 85, 247, 0.4);
-        --text-primary: #f0f0f5;
-        --text-secondary: rgba(255, 255, 255, 0.55);
-        --accent-1: #a855f7;
-        --accent-2: #6366f1;
-        --accent-3: #ec4899;
-        --glow: rgba(168, 85, 247, 0.15);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Beetle</title>
+  <meta name="description"
+    content="Black Beetle - hub for semester notes, assignments, and previous year question papers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      html {
-        scroll-behavior: smooth;
-      }
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --bg-card-hover: rgba(255, 255, 255, 0.08);
+      --bg-glass: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(168, 85, 247, 0.4);
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(255, 255, 255, 0.55);
+      --accent-1: #a855f7;
+      --accent-2: #6366f1;
+      --accent-3: #ec4899;
+      --glow: rgba(168, 85, 247, 0.15);
+    }
 
-      body {
-        font-family: "Inter", sans-serif;
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      /* ── Particle Canvas ── */
-      #particles {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-      }
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-      /* ── Navigation ── */
-      nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-        background: rgba(10, 10, 15, 0.7);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border);
-        transition: background 0.3s;
-      }
+    /* ── Particle Canvas ── */
+    #particles {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
 
-      .nav-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 64px;
-      }
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(10, 10, 15, 0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s;
+    }
 
-      .logo {
-        font-size: 1.35rem;
-        font-weight: 800;
-        letter-spacing: -0.5px;
-        background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
 
-      .logo span {
-        font-weight: 500;
-        opacity: 0.7;
-      }
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 8px;
-      }
+    .logo span {
+      font-weight: 500;
+      opacity: 0.7;
+    }
 
-      .nav-links a {
-        text-decoration: none;
-        color: var(--text-secondary);
-        font-size: 0.875rem;
-        font-weight: 500;
-        padding: 8px 16px;
-        border-radius: 10px;
-        transition: all 0.25s;
-      }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+    }
 
-      .nav-links a:hover {
-        color: #fff;
-        background: rgba(168, 85, 247, 0.12);
-      }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 10px;
+      transition: all 0.25s;
+    }
 
-      .mobile-toggle {
-        display: none;
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(168, 85, 247, 0.12);
+    }
 
-      /* ── Hero ── */
-      .hero {
-        position: relative;
-        z-index: 1;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 120px 24px 80px;
-      }
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
 
-      .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--bg-glass);
-        border: 1px solid var(--border);
-        padding: 6px 16px;
-        border-radius: 100px;
-        font-size: 0.8rem;
-        color: var(--text-secondary);
-        margin-bottom: 28px;
-        animation: fadeUp 0.8s ease both;
-      }
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+    }
 
-      .hero-badge .dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--accent-1);
-        animation: pulse 2s infinite;
-      }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      animation: fadeUp 0.8s ease both;
+    }
 
-      .hero h1 {
-        font-size: clamp(2.8rem, 7vw, 5.5rem);
-        font-weight: 900;
-        letter-spacing: -2px;
-        line-height: 1.05;
-        margin-bottom: 20px;
-        background: linear-gradient(
-          135deg,
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-1);
+      animation: pulse 2s infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg,
           #fff 30%,
           var(--accent-1) 60%,
-          var(--accent-3)
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        animation: fadeUp 0.8s 0.15s ease both;
-      }
+          var(--accent-3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeUp 0.8s 0.15s ease both;
+    }
 
-      .hero p {
-        font-size: 1.15rem;
-        color: var(--text-secondary);
-        max-width: 520px;
-        animation: fadeUp 0.8s 0.3s ease both;
-      }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
 
-      .hero-cta {
-        margin-top: 36px;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 14px 32px;
-        border-radius: 14px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-        color: #fff;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
-        transition:
-          transform 0.25s,
-          box-shadow 0.25s;
-        animation: fadeUp 0.8s 0.45s ease both;
-      }
+    .hero-cta {
+      margin-top: 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
+      transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+      animation: fadeUp 0.8s 0.45s ease both;
+    }
 
-      .hero-cta:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 40px rgba(168, 85, 247, 0.35);
-      }
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 40px rgba(168, 85, 247, 0.35);
+    }
 
-      .scroll-hint {
-        position: absolute;
-        bottom: 32px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        color: var(--text-secondary);
-        font-size: 0.75rem;
-        animation: bounce 2s infinite;
-      }
+    .scroll-hint {
+      position: absolute;
+      bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      animation: bounce 2s infinite;
+    }
 
-      .scroll-hint span {
-        font-size: 1.2rem;
-      }
+    .scroll-hint span {
+      font-size: 1.2rem;
+    }
 
-      /* ── Sections ── */
-      .section {
-        position: relative;
-        z-index: 1;
-        padding: 100px 24px;
-      }
+    /* ── Sections ── */
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 24px;
+    }
 
-      .section-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-      .section-header {
-        text-align: center;
-        margin-bottom: 56px;
-      }
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
 
-      .section-header h2 {
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        font-weight: 800;
-        letter-spacing: -1px;
-        background: linear-gradient(135deg, #fff, var(--accent-1));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #fff, var(--accent-1));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-      .section-header p {
-        color: var(--text-secondary);
-        margin-top: 10px;
-        font-size: 1rem;
-      }
+    .section-header p {
+      color: var(--text-secondary);
+      margin-top: 10px;
+      font-size: 1rem;
+    }
 
-      /* ── Cards ── */
-      .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 20px;
-      }
+    /* ── Cards ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
 
-      .card {
-        position: relative;
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        overflow: hidden;
-      }
+    .card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
 
-      .card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 18px;
-        background: linear-gradient(
-          135deg,
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      background: linear-gradient(135deg,
           rgba(168, 85, 247, 0.08),
-          transparent 60%
-        );
+          transparent 60%);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-6px);
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        0 0 30px var(--glow);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      padding: 28px 24px;
+      cursor: pointer;
+    }
+
+    .card:not(:has(.card-link)) {
+      padding: 28px 24px;
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+      background: none;
+      -webkit-text-fill-color: unset;
+    }
+
+    .card-label {
+      display: inline-flex;
+      align-items: center;
+      color: var(--accent-1);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .card-label a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .card:hover .card-label {
+      color: var(--accent-3);
+    }
+
+    /* Papers special layout */
+    .papers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .paper-card .sem-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .paper-card .sem-links a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.88rem;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .paper-card .sem-links a:hover {
+      background: rgba(168, 85, 247, 0.08);
+      border-color: var(--border-hover);
+      color: #fff;
+    }
+
+    .paper-card .sem-links a::before {
+      content: "📄";
+      font-size: 0.9rem;
+    }
+
+    .paper-card .sem-links a::after {
+      content: "→";
+      margin-left: auto;
+      opacity: 0.4;
+      transition: opacity 0.2s;
+    }
+
+    .paper-card .sem-links a:hover::after {
+      opacity: 1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    footer span {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from {
         opacity: 0;
-        transition: opacity 0.35s;
+        transform: translateY(24px);
       }
 
-      .card:hover {
-        border-color: var(--border-hover);
-        transform: translateY(-6px);
-        box-shadow:
-          0 20px 50px rgba(0, 0, 0, 0.3),
-          0 0 30px var(--glow);
-      }
-
-      .card:hover::before {
-        opacity: 1;
-      }
-
-      .card-link {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        padding: 28px 24px;
-        cursor: pointer;
-      }
-
-      .card:not(:has(.card-link)) {
-        padding: 28px 24px;
-      }
-
-      .card-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-        margin-bottom: 16px;
-      }
-
-      .card h3 {
-        font-size: 1.1rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: #fff;
-        background: none;
-        -webkit-text-fill-color: unset;
-      }
-
-      .card-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        color: var(--accent-1);
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: all 0.2s;
-      }
-
-      .card-label::after {
-        content: "→";
-        transition: transform 0.2s;
-      }
-
-      .card:hover .card-label {
-        color: var(--accent-3);
-        gap: 10px;
-      }
-
-      .card:hover .card-label::after {
-        transform: translateX(3px);
-      }
-
-      /* Papers special layout */
-      .papers-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 20px;
-      }
-
-      .paper-card .sem-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 12px;
-      }
-
-      .paper-card .sem-links a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 14px;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--border);
-        color: var(--text-secondary);
-        font-weight: 500;
-        font-size: 0.88rem;
-        transition: all 0.2s;
-        text-decoration: none;
-      }
-
-      .paper-card .sem-links a:hover {
-        background: rgba(168, 85, 247, 0.08);
-        border-color: var(--border-hover);
-        color: #fff;
-      }
-
-      .paper-card .sem-links a::before {
-        content: "📄";
-        font-size: 0.9rem;
-      }
-
-      .paper-card .sem-links a::after {
-        content: "→";
-        margin-left: auto;
-        opacity: 0.4;
-        transition: opacity 0.2s;
-      }
-
-      .paper-card .sem-links a:hover::after {
-        opacity: 1;
-      }
-
-      /* ── Footer ── */
-      footer {
-        position: relative;
-        z-index: 1;
-        text-align: center;
-        padding: 40px 24px;
-        border-top: 1px solid var(--border);
-        color: var(--text-secondary);
-        font-size: 0.85rem;
-      }
-
-      footer span {
-        background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 700;
-      }
-
-      /* ── Animations ── */
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(24px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-
-        50% {
-          opacity: 0.4;
-        }
-      }
-
-      @keyframes bounce {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-
-        50% {
-          transform: translateY(6px);
-        }
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .reveal.visible {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
+    }
 
-      /* ── Mobile ── */
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-          position: absolute;
-          top: 64px;
-          left: 0;
-          width: 100%;
-          flex-direction: column;
-          background: rgba(10, 10, 15, 0.95);
-          backdrop-filter: blur(20px);
-          padding: 16px;
-          gap: 4px;
-          border-bottom: 1px solid var(--border);
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(10, 10, 15, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 16px;
+        gap: 4px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .cards-grid,
+      .papers-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 60px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="particles"></canvas>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Black Beetle</div>
+      <button class="mobile-toggle" id="menuBtn" aria-label="Toggle menu">
+        ☰
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#notes">Notes</a></li>
+        <li><a href="#assignments">Assignments</a></li>
+        <li><a href="#papers">Question Papers</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span> Academic Resource Hub
+    </div>
+    <h1>Black Beetle</h1>
+    <a href="#notes" class="hero-cta">Explore Resources ↓</a>
+    <div class="scroll-hint"><span>↓</span>Scroll to explore</div>
+  </section>
+
+  <!-- Notes Section -->
+  <section id="notes" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <h2>📚 Notes</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card-icon">📖</div>
+          <h3>1st Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing">View
+              Notes</a>
+          </span>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">📖</div>
+          <h3>2nd Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1vDP4evjZf9xndmd0HPOW01M0nqN-hrC1?usp=drive_link">View
+              Notes</a>
+          </span>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">📖</div>
+          <h3>3rd Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1bMeZlwaUmt26qlUtL8cHTkr6cDeeiVQ8?usp=sharing">View
+              Notes</a>
+          </span>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">📖</div>
+          <h3>4th Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1CyPFCm2tVKx39tJ_jyJsa7wzx43-fGUh?usp=sharing">View
+              Notes</a>
+          </span>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">📖</div>
+          <h3>5th Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1FdDf75yaKJtTlJdO9ccp8Dar0CgvyW50?usp=sharing">View
+              Notes</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assignments Section -->
+  <section id="assignments" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <h2>📝 Assignments</h2>
+      </div>
+      <div class="cards-grid">
+        <div class="card reveal">
+          <div class="card-icon">✏️</div>
+          <h3>1st Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1r8fxf8IS6_gobTGEzcpifryC9dNsFywy?usp=sharing">View
+              Assignments</a>
+          </span>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">✏️</div>
+          <h3>2nd Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1hDeZNAMbaYvR2z-lK2xbc2G9ul_rU9D5?usp=sharing">View
+              Assignments</a>
+          </span>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">✏️</div>
+          <h3>3rd Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1Q7LmkJYACjG4j392QNZS9GJjgZCH19e3?usp=sharing">View
+              Assignments</a>
+          </span>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">✏️</div>
+          <h3>4th Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1yhRVIxWHwqyvuPdfJgkQbhSQXdU3cky9?usp=sharing">View
+              Assignments</a>
+          </span>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">✏️</div>
+          <h3>5th Semester</h3>
+          <span class="card-label">
+            <a href="https://drive.google.com/drive/folders/1OULi7zjMRCr-SgjjJz4yQAerX0lDPMeA?usp=sharing">View
+              Assignments</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Question Papers Section -->
+  <section id="papers" class="section">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <h2>📄 Practice Question Papers</h2>
+        <p>Extensive collection of mid-sem and end-sem exam papers</p>
+      </div>
+      <div class="papers-grid">
+        <div class="card paper-card reveal">
+          <div class="card-icon">🏫</div>
+          <h3>Mid-Sem Exam Papers</h3>
+          <div class="sem-links">
+            <a href="https://drive.google.com/drive/folders/1E6TlUUrpKzzYeMzidkhAHg2QcrkrayVQ?usp=sharing">1st
+              Semester</a>
+            <a href="https://drive.google.com/drive/folders/1ev5CAFyirkUjGObYwqHMNi_YNdOuqoPi?usp=sharing">2nd
+              Semester</a>
+            <a href="https://drive.google.com/drive/folders/1ryWzDBBHcced00CGLkbnrr3q-JjB-Aq1?usp=sharing">3rd
+              Semester</a>
+            <a href="https://drive.google.com/drive/folders/1XeuXhIycmm_mt1eidKAXqglB1zQipvjW?usp=sharing">4th
+              Semester</a>
+            <a href="https://drive.google.com/drive/folders/1NY7vOviRy0BstHOTvsdGdhVFmIpHycbN?usp=sharing">5th
+              Semester</a>
+          </div>
+        </div>
+        <div class="card paper-card reveal">
+          <div class="card-icon">🎓</div>
+          <h3>End-Sem Exam Papers</h3>
+          <div class="sem-links">
+            <a href="https://drive.google.com/drive/folders/1W_0nvlZbM2rxgAqD1-LXcpq2S4zPS7v_?usp=sharing">1st
+              Semester</a>
+            <a href="https://drive.google.com/drive/folders/1Caro5X0O08yUIXAy3TI4DKXuZa-HfjkC?usp=sharing">2nd
+              Semester</a>
+            <a href="https://drive.google.com/drive/folders/1VsgaviKAE7FTTp3AkSkqxSrHmoNQsFBB?usp=sharing">3rd
+              Semester</a>
+            <a href="https://drive.google.com/drive/folders/1uZg2F2m3vIvlQkrfyBemgnlRYWGLcyoT?usp=sharing">4th
+              Semester</a>
+            <a href="https://drive.google.com/drive/folders/1cGMXOva5w_kV8xp2OAwYW9V15v5t9ia5?usp=sharing">5th
+              Semester</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><span>Black Beetle</span></p>
+  </footer>
+
+  <script>
+    // ── Particle Background ──
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+    let mouse = { x: null, y: null, radius: 150 };
+
+    window.addEventListener("mousemove", (e) => {
+      mouse.x = e.x;
+      mouse.y = e.y;
+    });
+    window.addEventListener("mouseout", () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    function resize() {
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+    }
+    resize();
+    addEventListener("resize", resize);
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.r = Math.random() * 1.5 + 0.5;
+        this.baseVx = (Math.random() - 0.5) * 0.3;
+        this.baseVy = (Math.random() - 0.5) * 0.3;
+        this.vx = this.baseVx;
+        this.vy = this.baseVy;
+        this.alpha = Math.random() * 0.4 + 0.1;
+      }
+      update() {
+        if (mouse.x != null && mouse.y != null) {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < mouse.radius) {
+            const forceDirectionX = dx / distance;
+            const forceDirectionY = dy / distance;
+            const force = (mouse.radius - distance) / mouse.radius;
+            this.vx -= forceDirectionX * force * 0.6;
+            this.vy -= forceDirectionY * force * 0.6;
+          }
         }
 
-        .nav-links.open {
-          display: flex;
-        }
+        this.vx = this.vx * 0.95 + this.baseVx * 0.05;
+        this.vy = this.vy * 0.95 + this.baseVy * 0.05;
 
-        .mobile-toggle {
-          display: block;
-        }
+        this.x += this.vx;
+        this.y += this.vy;
 
-        .cards-grid,
-        .papers-grid {
-          grid-template-columns: 1fr;
+        if (this.x < 0 || this.x > canvas.width) {
+          this.baseVx *= -1;
+          this.vx *= -1;
+          this.x = Math.max(0, Math.min(this.x, canvas.width));
         }
-
-        .section {
-          padding: 60px 16px;
+        if (this.y < 0 || this.y > canvas.height) {
+          this.baseVy *= -1;
+          this.vy *= -1;
+          this.y = Math.max(0, Math.min(this.y, canvas.height));
         }
       }
-    </style>
-  </head>
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(168,85,247,${this.alpha})`;
+        ctx.fill();
+      }
+    }
+    for (let i = 0; i < 80; i++) particles.push(new Particle());
 
-  <body>
-    <canvas id="particles"></canvas>
-
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-inner">
-        <div class="logo">Black Beetle</div>
-        <button class="mobile-toggle" id="menuBtn" aria-label="Toggle menu">
-          ☰
-        </button>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#notes">Notes</a></li>
-          <li><a href="#assignments">Assignments</a></li>
-          <li><a href="#papers">Question Papers</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-badge">
-        <span class="dot"></span> Academic Resource Hub
-      </div>
-      <h1>Black Beetle</h1>
-      <a href="#notes" class="hero-cta">Explore Resources ↓</a>
-      <div class="scroll-hint"><span>↓</span>Scroll to explore</div>
-    </section>
-
-    <!-- Notes Section -->
-    <section id="notes" class="section">
-      <div class="section-inner">
-        <div class="section-header reveal">
-          <h2>📚 Notes</h2>
-        </div>
-        <div class="cards-grid">
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">📖</div>
-              <h3>1st Semester</h3>
-              <span class="card-label">View Notes</span>
-            </a>
-          </div>
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1vDP4evjZf9xndmd0HPOW01M0nqN-hrC1?usp=drive_link"
-              target="_blank"
-            >
-              <div class="card-icon">📖</div>
-              <h3>2nd Semester</h3>
-              <span class="card-label">View Notes</span>
-            </a>
-          </div>
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1bMeZlwaUmt26qlUtL8cHTkr6cDeeiVQ8?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">📖</div>
-              <h3>3rd Semester</h3>
-              <span class="card-label">View Notes</span>
-            </a>
-          </div>
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1CyPFCm2tVKx39tJ_jyJsa7wzx43-fGUh?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">📖</div>
-              <h3>4th Semester</h3>
-              <span class="card-label">View Notes</span>
-            </a>
-          </div>
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1FdDf75yaKJtTlJdO9ccp8Dar0CgvyW50?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">📖</div>
-              <h3>5th Semester</h3>
-              <span class="card-label">View Notes</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Assignments Section -->
-    <section id="assignments" class="section">
-      <div class="section-inner">
-        <div class="section-header reveal">
-          <h2>📝 Assignments</h2>
-        </div>
-        <div class="cards-grid">
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1r8fxf8IS6_gobTGEzcpifryC9dNsFywy?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">✏️</div>
-              <h3>1st Semester</h3>
-              <span class="card-label">View Assignments</span>
-            </a>
-          </div>
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1hDeZNAMbaYvR2z-lK2xbc2G9ul_rU9D5?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">✏️</div>
-              <h3>2nd Semester</h3>
-              <span class="card-label">View Assignments</span>
-            </a>
-          </div>
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1Q7LmkJYACjG4j392QNZS9GJjgZCH19e3?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">✏️</div>
-              <h3>3rd Semester</h3>
-              <span class="card-label">View Assignments</span>
-            </a>
-          </div>
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1yhRVIxWHwqyvuPdfJgkQbhSQXdU3cky9?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">✏️</div>
-              <h3>4th Semester</h3>
-              <span class="card-label">View Assignments</span>
-            </a>
-          </div>
-          <div class="card reveal">
-            <a
-              class="card-link"
-              href="https://drive.google.com/drive/folders/1OULi7zjMRCr-SgjjJz4yQAerX0lDPMeA?usp=sharing"
-              target="_blank"
-            >
-              <div class="card-icon">✏️</div>
-              <h3>5th Semester</h3>
-              <span class="card-label">View Assignments</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Question Papers Section -->
-    <section id="papers" class="section">
-      <div class="section-inner">
-        <div class="section-header reveal">
-          <h2>📄 Practice Question Papers</h2>
-          <p>Extensive collection of mid-sem and end-sem exam papers</p>
-        </div>
-        <div class="papers-grid">
-          <div class="card paper-card reveal">
-            <div class="card-icon">🏫</div>
-            <h3>Mid-Sem Exam Papers</h3>
-            <div class="sem-links">
-              <a
-                href="https://drive.google.com/drive/folders/1E6TlUUrpKzzYeMzidkhAHg2QcrkrayVQ?usp=sharing"
-                >1st Semester</a
-              >
-              <a
-                href="https://drive.google.com/drive/folders/1ev5CAFyirkUjGObYwqHMNi_YNdOuqoPi?usp=sharing"
-                >2nd Semester</a
-              >
-              <a
-                href="https://drive.google.com/drive/folders/1ryWzDBBHcced00CGLkbnrr3q-JjB-Aq1?usp=sharing"
-                >3rd Semester</a
-              >
-              <a
-                href="https://drive.google.com/drive/folders/1XeuXhIycmm_mt1eidKAXqglB1zQipvjW?usp=sharing"
-                >4th Semester</a
-              >
-              <a
-                href="https://drive.google.com/drive/folders/1NY7vOviRy0BstHOTvsdGdhVFmIpHycbN?usp=sharing"
-                >5th Semester</a
-              >
-            </div>
-          </div>
-          <div class="card paper-card reveal">
-            <div class="card-icon">🎓</div>
-            <h3>End-Sem Exam Papers</h3>
-            <div class="sem-links">
-              <a
-                href="https://drive.google.com/drive/folders/1W_0nvlZbM2rxgAqD1-LXcpq2S4zPS7v_?usp=sharing"
-                >1st Semester</a
-              >
-              <a
-                href="https://drive.google.com/drive/folders/1Caro5X0O08yUIXAy3TI4DKXuZa-HfjkC?usp=sharing"
-                >2nd Semester</a
-              >
-              <a
-                href="https://drive.google.com/drive/folders/1VsgaviKAE7FTTp3AkSkqxSrHmoNQsFBB?usp=sharing"
-                >3rd Semester</a
-              >
-              <a
-                href="https://drive.google.com/drive/folders/1uZg2F2m3vIvlQkrfyBemgnlRYWGLcyoT?usp=sharing"
-                >4th Semester</a
-              >
-              <a
-                href="https://drive.google.com/drive/folders/1cGMXOva5w_kV8xp2OAwYW9V15v5t9ia5?usp=sharing"
-                >5th Semester</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <p><span>Black Beetle</span></p>
-    </footer>
-
-    <script>
-      // ── Particle Background ──
-      const canvas = document.getElementById("particles");
-      const ctx = canvas.getContext("2d");
-      let particles = [];
-      let mouse = { x: null, y: null, radius: 150 };
-
-      window.addEventListener("mousemove", (e) => {
-        mouse.x = e.x;
-        mouse.y = e.y;
+    function drawLines() {
+      for (let i = 0; i < particles.length; i++) {
+        if (mouse.x != null && mouse.y != null) {
+          const dx = particles[i].x - mouse.x;
+          const dy = particles[i].y - mouse.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 150) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.strokeStyle = `rgba(168,85,247,${0.15 * (1 - d / 150)})`;
+            ctx.stroke();
+          }
+        }
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(168,85,247,${0.06 * (1 - d / 120)})`;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p) => {
+        p.update();
+        p.draw();
       });
-      window.addEventListener("mouseout", () => {
-        mouse.x = null;
-        mouse.y = null;
-      });
+      drawLines();
+      requestAnimationFrame(animate);
+    }
+    animate();
 
-      function resize() {
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
-      }
-      resize();
-      addEventListener("resize", resize);
+    // ── Mobile Menu ──
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("open");
+    });
 
-      class Particle {
-        constructor() {
-          this.reset();
-        }
-        reset() {
-          this.x = Math.random() * canvas.width;
-          this.y = Math.random() * canvas.height;
-          this.r = Math.random() * 1.5 + 0.5;
-          this.baseVx = (Math.random() - 0.5) * 0.3;
-          this.baseVy = (Math.random() - 0.5) * 0.3;
-          this.vx = this.baseVx;
-          this.vy = this.baseVy;
-          this.alpha = Math.random() * 0.4 + 0.1;
-        }
-        update() {
-          if (mouse.x != null && mouse.y != null) {
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < mouse.radius) {
-              const forceDirectionX = dx / distance;
-              const forceDirectionY = dy / distance;
-              const force = (mouse.radius - distance) / mouse.radius;
-              this.vx -= forceDirectionX * force * 0.6;
-              this.vy -= forceDirectionY * force * 0.6;
-            }
+    // ── Scroll Reveal ──
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e, i) => {
+          if (e.isIntersecting) {
+            setTimeout(() => e.target.classList.add("visible"), i * 80);
+            obs.unobserve(e.target);
           }
-
-          this.vx = this.vx * 0.95 + this.baseVx * 0.05;
-          this.vy = this.vy * 0.95 + this.baseVy * 0.05;
-
-          this.x += this.vx;
-          this.y += this.vy;
-
-          if (this.x < 0 || this.x > canvas.width) {
-            this.baseVx *= -1;
-            this.vx *= -1;
-            this.x = Math.max(0, Math.min(this.x, canvas.width));
-          }
-          if (this.y < 0 || this.y > canvas.height) {
-            this.baseVy *= -1;
-            this.vy *= -1;
-            this.y = Math.max(0, Math.min(this.y, canvas.height));
-          }
-        }
-        draw() {
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(168,85,247,${this.alpha})`;
-          ctx.fill();
-        }
-      }
-      for (let i = 0; i < 80; i++) particles.push(new Particle());
-
-      function drawLines() {
-        for (let i = 0; i < particles.length; i++) {
-          if (mouse.x != null && mouse.y != null) {
-            const dx = particles[i].x - mouse.x;
-            const dy = particles[i].y - mouse.y;
-            const d = Math.sqrt(dx * dx + dy * dy);
-            if (d < 150) {
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(mouse.x, mouse.y);
-              ctx.strokeStyle = `rgba(168,85,247,${0.15 * (1 - d / 150)})`;
-              ctx.stroke();
-            }
-          }
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const d = Math.sqrt(dx * dx + dy * dy);
-            if (d < 120) {
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(168,85,247,${0.06 * (1 - d / 120)})`;
-              ctx.stroke();
-            }
-          }
-        }
-      }
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach((p) => {
-          p.update();
-          p.draw();
         });
-        drawLines();
-        requestAnimationFrame(animate);
-      }
-      animate();
+      },
+      { threshold: 0.1 },
+    );
+    document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
 
-      // ── Mobile Menu ──
-      document.getElementById("menuBtn").addEventListener("click", () => {
-        document.getElementById("navLinks").classList.toggle("open");
+    // ── Smooth Scroll ──
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute("href"));
+        if (t) window.scrollTo({ top: t.offsetTop - 72, behavior: "smooth" });
+        document.getElementById("navLinks").classList.remove("open");
       });
+    });
+  </script>
+</body>
 
-      // ── Scroll Reveal ──
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e, i) => {
-            if (e.isIntersecting) {
-              setTimeout(() => e.target.classList.add("visible"), i * 80);
-              obs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
-
-      // ── Smooth Scroll ──
-      document.querySelectorAll('a[href^="#"]').forEach((a) => {
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          const t = document.querySelector(a.getAttribute("href"));
-          if (t) window.scrollTo({ top: t.offsetTop - 72, behavior: "smooth" });
-          document.getElementById("navLinks").classList.remove("open");
-        });
-      });
-    </script>
-  </body>
 </html>
