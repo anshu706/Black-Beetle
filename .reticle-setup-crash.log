@@ -1,0 +1,11 @@
+Error: EPIPE: broken pipe, write
+    at Socket._write (node:internal/net:75:18)
+    at writeOrBuffer (node:internal/streams/writable:570:12)
+    at _write (node:internal/streams/writable:499:10)
+    at Writable.write (node:internal/streams/writable:508:10)
+    at emit (file:///C:/Users/DELL/AppData/Roaming/npm/node_modules/@reticlehq/server/dist/surface/mcp/mcp-proxy.js:475:28)
+    at onSseEvent (file:///C:/Users/DELL/AppData/Roaming/npm/node_modules/@reticlehq/server/dist/surface/mcp/mcp-proxy.js:587:17)
+    at IncomingMessage.<anonymous> (file:///C:/Users/DELL/AppData/Roaming/npm/node_modules/@reticlehq/server/dist/surface/mcp/mcp-proxy.js:715:25)
+    at IncomingMessage.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
