@@ -703,57 +703,6 @@
     }
 
     /* ═══════════════════════════════
-       CONTRIBUTE SECTION
-    ═══════════════════════════════ */
-    .contribute {
-      position: relative;
-      z-index: 1;
-      padding: 0 24px 100px;
-    }
-
-    .contribute-card {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-accent);
-      border-radius: var(--r-xl);
-      padding: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .contribute-card::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .contribute-text h3 {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-      background: var(--grad-title);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 10px;
-    }
-
-    .contribute-text p {
-      color: var(--ink-muted);
-      font-size: 0.95rem;
-      max-width: 440px;
-    }
-
-    /* ═══════════════════════════════
        FOOTER
     ═══════════════════════════════ */
     footer {
@@ -950,7 +899,6 @@
       <li><a href="#notes">Notes</a></li>
       <li><a href="#assignments">Assignments</a></li>
       <li><a href="#papers">Papers</a></li>
-      <li><a href="#contribute">Contribute</a></li>
     </ul>
   </nav>
 
@@ -968,10 +916,6 @@
       <a href="#notes" class="btn-primary">
         Explore Resources
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-      </a>
-      <a href="#contribute" class="btn-secondary">
-        Contribute Notes
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </a>
     </div>
     <div class="scroll-hint" id="scrollHint" aria-hidden="true">
@@ -1274,19 +1218,7 @@
     </div>
   </section>
 
-  <!-- ── CONTRIBUTE SECTION ── -->
-  <section id="contribute" class="contribute" aria-labelledby="contribute-heading">
-    <div class="contribute-card reveal">
-      <div class="contribute-text">
-        <h3 id="contribute-heading">Help a Classmate</h3>
-        <p>Got notes or assignments that aren't here yet? Submit them and help the next student who stays up at 2am before exams.</p>
-      </div>
-      <a href="https://github.com/anshu706/Black-Beetle" target="_blank" rel="noopener noreferrer" class="btn-primary">
-        Contribute on GitHub
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-      </a>
-    </div>
-  </section>
+
 
   <!-- ── Footer ── -->
   <footer>
