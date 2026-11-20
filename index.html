@@ -568,30 +568,26 @@
 
     /* The Swatch-Style Resource Card */
     .swatch-card {
-      background-color: var(--porcelain-sand);
-      color: var(--oxide-burgundy);
+      background: linear-gradient(145deg, rgba(62, 25, 34, 0.95) 0%, rgba(37, 13, 19, 0.98) 100%);
+      color: var(--porcelain-sand);
+      border: 1px solid rgba(229, 216, 197, 0.16);
       border-radius: var(--radius-lg);
-      padding: 26px 24px 22px;
+      padding: 24px 22px 20px;
       box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       position: relative;
       text-decoration: none;
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
       min-height: 250px;
       overflow: hidden;
     }
 
-    /* Alternating cards in Burgundy dark swatch style */
-    .swatch-card.burgundy-variant {
-      background-color: var(--oxide-burgundy-dark);
-      color: var(--porcelain-sand);
-      border: 1px solid var(--border-light);
-    }
-
     .swatch-card:hover {
       transform: translateY(-8px) scale(1.02);
+      border-color: rgba(229, 216, 197, 0.45);
+      background: linear-gradient(145deg, rgba(82, 33, 45, 0.98) 0%, rgba(48, 17, 25, 1) 100%);
       box-shadow: var(--shadow-hover);
     }
 
@@ -600,53 +596,70 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: var(--font-typewriter);
-      font-size: 0.76rem;
-      letter-spacing: 1px;
-      opacity: 0.8;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(229, 216, 197, 0.1);
+      border: 1px solid rgba(229, 216, 197, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--porcelain-sand);
+      transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+      flex-shrink: 0;
+    }
+
+    .swatch-card:hover .card-icon-box {
+      transform: scale(1.08) rotate(-2deg);
+      background-color: var(--porcelain-sand);
+      color: var(--oxide-burgundy);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
     }
 
     .card-badge-sem {
       display: inline-block;
-      padding: 3px 10px;
+      font-family: var(--font-typewriter);
+      font-size: 0.78rem;
+      padding: 4px 12px;
       border-radius: 100px;
       font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .swatch-card .card-badge-sem {
-      background-color: rgba(84, 37, 47, 0.12);
-      color: var(--oxide-burgundy);
-    }
-
-    .swatch-card.burgundy-variant .card-badge-sem {
-      background-color: rgba(229, 216, 197, 0.15);
+      letter-spacing: 0.8px;
+      background-color: rgba(229, 216, 197, 0.12);
       color: var(--porcelain-sand);
+      border: 1px solid rgba(229, 216, 197, 0.2);
+    }
+
+    .swatch-card:hover .card-badge-sem {
+      border-color: rgba(229, 216, 197, 0.4);
     }
 
     /* Card Middle Content */
     .card-center-content {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .card-title {
       font-family: var(--font-display);
-      font-size: 1.95rem;
+      font-size: 2rem;
       letter-spacing: 1.5px;
       line-height: 1.05;
       text-transform: uppercase;
       margin-bottom: 8px;
+      color: var(--porcelain-sand);
     }
 
     .card-desc {
       font-family: var(--font-typewriter);
-      font-size: 0.8rem;
-      line-height: 1.5;
-      opacity: 0.82;
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: rgba(229, 216, 197, 0.7);
     }
 
-    /* Card Bottom Technical Bar (HEX / RGB / Action) */
+    /* Card Bottom Technical Bar */
     .card-meta-bottom {
       display: flex;
       justify-content: space-between;
@@ -655,12 +668,9 @@
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 1px;
-      border-top: 1px dashed rgba(84, 37, 47, 0.2);
+      border-top: 1px dashed rgba(229, 216, 197, 0.18);
       padding-top: 14px;
-    }
-
-    .swatch-card.burgundy-variant .card-meta-bottom {
-      border-top-color: rgba(229, 216, 197, 0.2);
+      color: var(--porcelain-sand);
     }
 
     .card-action-link {
@@ -684,8 +694,9 @@
     }
 
     .paper-dossier-card {
-      background-color: var(--porcelain-sand);
-      color: var(--oxide-burgundy);
+      background: linear-gradient(145deg, rgba(62, 25, 34, 0.95) 0%, rgba(37, 13, 19, 0.98) 100%);
+      color: var(--porcelain-sand);
+      border: 1px solid rgba(229, 216, 197, 0.16);
       border-radius: var(--radius-xl);
       padding: 32px 30px 28px;
       box-shadow: var(--shadow-card);
@@ -694,10 +705,11 @@
       flex-direction: column;
     }
 
-    .paper-dossier-card.burgundy-dossier {
-      background-color: var(--oxide-burgundy-dark);
-      color: var(--porcelain-sand);
-      border: 1px solid var(--border-light);
+    .paper-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
     .paper-sem-list {
@@ -716,28 +728,19 @@
       text-decoration: none;
       font-family: var(--font-typewriter);
       font-size: 0.88rem;
-      transition: all 0.2s ease;
-    }
-
-    .paper-dossier-card .paper-row-item {
-      background-color: rgba(84, 37, 47, 0.06);
-      color: var(--oxide-burgundy);
-      border: 1px solid rgba(84, 37, 47, 0.12);
-    }
-
-    .paper-dossier-card .paper-row-item:hover {
-      background-color: var(--oxide-burgundy);
-      color: var(--porcelain-sand);
-      transform: translateX(4px);
-    }
-
-    .paper-dossier-card.burgundy-dossier .paper-row-item {
       background-color: rgba(229, 216, 197, 0.06);
       color: var(--porcelain-sand);
       border: 1px solid rgba(229, 216, 197, 0.12);
+      transition: all 0.2s ease;
     }
 
-    .paper-dossier-card.burgundy-dossier .paper-row-item:hover {
+    .paper-row-item:hover {
+      background-color: var(--porcelain-sand);
+      color: var(--oxide-burgundy);
+      border-color: var(--porcelain-sand);
+      transform: translateX(6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
       background-color: var(--porcelain-sand);
       color: var(--oxide-burgundy);
       transform: translateX(4px);
@@ -1162,7 +1165,9 @@
         <!-- Sem 1 -->
         <a class="swatch-card" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="1">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
             <span class="card-badge-sem">SEM 01</span>
           </div>
           <div class="card-center-content">
@@ -1176,9 +1181,11 @@
         </a>
 
         <!-- Sem 2 -->
-        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1vDP4evjZf9xndmd0HPOW01M0nqN-hrC1?usp=drive_link" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="2">
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1vDP4evjZf9xndmd0HPOW01M0nqN-hrC1?usp=drive_link" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="2">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
             <span class="card-badge-sem">SEM 02</span>
           </div>
           <div class="card-center-content">
@@ -1194,7 +1201,9 @@
         <!-- Sem 3 -->
         <a class="swatch-card" href="https://drive.google.com/drive/folders/1bMeZlwaUmt26qlUtL8cHTkr6cDeeiVQ8?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="3">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
             <span class="card-badge-sem">SEM 03</span>
           </div>
           <div class="card-center-content">
@@ -1208,9 +1217,11 @@
         </a>
 
         <!-- Sem 4 -->
-        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1CyPFCm2tVKx39tJ_jyJsa7wzx43-fGUh?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="4">
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1CyPFCm2tVKx39tJ_jyJsa7wzx43-fGUh?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="4">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
             <span class="card-badge-sem">SEM 04</span>
           </div>
           <div class="card-center-content">
@@ -1226,60 +1237,14 @@
         <!-- Sem 5 -->
         <a class="swatch-card" href="https://drive.google.com/drive/folders/1FdDf75yaKJtTlJdO9ccp8Dar0CgvyW50?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="5">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
             <span class="card-badge-sem">SEM 05</span>
           </div>
           <div class="card-center-content">
             <h3 class="card-title">5th Semester</h3>
             <p class="card-desc">Software engineering, compiler design, web technologies, and discipline electives.</p>
-          </div>
-          <div class="card-meta-bottom">
-            <span>NOTES ARCHIVE</span>
-            <span class="card-action-link">OPEN DRIVE &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Sem 6 -->
-        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="6">
-          <div class="card-meta-top">
-            <span>@BlackBeetle</span>
-            <span class="card-badge-sem">SEM 06</span>
-          </div>
-          <div class="card-center-content">
-            <h3 class="card-title">6th Semester</h3>
-            <p class="card-desc">Machine learning, cloud computing, distributed systems, and minor projects.</p>
-          </div>
-          <div class="card-meta-bottom">
-            <span>NOTES ARCHIVE</span>
-            <span class="card-action-link">OPEN DRIVE &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Sem 7 -->
-        <a class="swatch-card" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="7">
-          <div class="card-meta-top">
-            <span>@BlackBeetle</span>
-            <span class="card-badge-sem">SEM 07</span>
-          </div>
-          <div class="card-center-content">
-            <h3 class="card-title">7th Semester</h3>
-            <p class="card-desc">Cybersecurity, advanced analytics, industry capstones, and project phase one.</p>
-          </div>
-          <div class="card-meta-bottom">
-            <span>NOTES ARCHIVE</span>
-            <span class="card-action-link">OPEN DRIVE &rarr;</span>
-          </div>
-        </a>
-
-        <!-- Sem 8 -->
-        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="8">
-          <div class="card-meta-top">
-            <span>@BlackBeetle</span>
-            <span class="card-badge-sem">SEM 08</span>
-          </div>
-          <div class="card-center-content">
-            <h3 class="card-title">8th Semester</h3>
-            <p class="card-desc">Major thesis dissertation, comprehensive viva, and enterprise seminars.</p>
           </div>
           <div class="card-meta-bottom">
             <span>NOTES ARCHIVE</span>
