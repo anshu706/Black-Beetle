@@ -741,9 +741,12 @@
       transform: translateX(6px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
+
+    .paper-dossier-card:hover .card-icon-box {
+      transform: scale(1.08) rotate(-2deg);
       background-color: var(--porcelain-sand);
       color: var(--oxide-burgundy);
-      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
     }
 
     .paper-sem-badge {
@@ -862,25 +865,6 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    .footer-nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .footer-nav-link {
-      font-family: var(--font-typewriter);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .footer-nav-link:hover {
-      color: var(--porcelain-sand);
-    }
 
     .footer-copy-text {
       font-family: var(--font-typewriter);
@@ -961,10 +945,6 @@
       .dock-box-btn svg {
         width: 18px;
         height: 18px;
-      }
-      .footer-nav-links {
-        flex-wrap: wrap;
-        gap: 16px;
       }
     }
   </style>
@@ -1270,7 +1250,15 @@
         <!-- Sem 1 -->
         <a class="swatch-card" href="https://drive.google.com/drive/folders/1r8fxf8IS6_gobTGEzcpifryC9dNsFywy?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="1">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
             <span class="card-badge-sem">SEM 01</span>
           </div>
           <div class="card-center-content">
@@ -1284,9 +1272,18 @@
         </a>
 
         <!-- Sem 2 -->
-        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1hDeZNAMbaYvR2z-lK2xbc2G9ul_rU9D5?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="2">
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1hDeZNAMbaYvR2z-lK2xbc2G9ul_rU9D5?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="2">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M4.93 4.93l4.24 4.24"/>
+                <path d="M14.83 9.17l4.24-4.24"/>
+                <path d="M14.83 14.83l4.24 4.24"/>
+                <path d="M9.17 14.83L4.93 19.07"/>
+                <circle cx="12" cy="12" r="4"/>
+              </svg>
+            </div>
             <span class="card-badge-sem">SEM 02</span>
           </div>
           <div class="card-center-content">
@@ -1302,7 +1299,15 @@
         <!-- Sem 3 -->
         <a class="swatch-card" href="https://drive.google.com/drive/folders/1Q7LmkJYACjG4j392QNZS9GJjgZCH19e3?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="3">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"/>
+                <circle cx="6" cy="12" r="3"/>
+                <circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+            </div>
             <span class="card-badge-sem">SEM 03</span>
           </div>
           <div class="card-center-content">
@@ -1316,9 +1321,15 @@
         </a>
 
         <!-- Sem 4 -->
-        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1yhRVIxWHwqyvuPdfJgkQbhSQXdU3cky9?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="4">
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1yhRVIxWHwqyvuPdfJgkQbhSQXdU3cky9?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="4">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+            </div>
             <span class="card-badge-sem">SEM 04</span>
           </div>
           <div class="card-center-content">
@@ -1334,7 +1345,13 @@
         <!-- Sem 5 -->
         <a class="swatch-card" href="https://drive.google.com/drive/folders/1OULi7zjMRCr-SgjjJz4yQAerX0lDPMeA?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="5">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
             <span class="card-badge-sem">SEM 05</span>
           </div>
           <div class="card-center-content">
@@ -1365,7 +1382,12 @@
         <!-- Mid-Semester Dossier -->
         <div class="paper-dossier-card" data-type="papers">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
             <span class="card-badge-sem">MID-SEM ARCHIVE</span>
           </div>
           <div class="card-center-content">
@@ -1397,9 +1419,14 @@
         </div>
 
         <!-- End-Semester Dossier -->
-        <div class="paper-dossier-card burgundy-dossier" data-type="papers">
+        <div class="paper-dossier-card" data-type="papers">
           <div class="card-meta-top">
-            <span>@BlackBeetle</span>
+            <div class="card-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+            </div>
             <span class="card-badge-sem">END-SEM ARCHIVE</span>
           </div>
           <div class="card-center-content">
@@ -1443,48 +1470,43 @@
       <!-- Centered Icon Navigation Dock (from Image 3) -->
       <nav class="footer-icon-dock" aria-label="Quick resource navigation">
         <a href="#home" class="dock-box-btn" aria-label="Home" data-tooltip="Home">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <line x1="2" y1="12" x2="22" y2="12"/>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
           </svg>
         </a>
 
-        <a href="#notes" class="dock-box-btn" aria-label="Semester Notes" data-tooltip="Notes">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 18 22 12 16 6"/>
-            <polyline points="8 6 2 12 8 18"/>
+        <a href="#notes" class="dock-box-btn" aria-label="Notes" data-tooltip="Notes">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="7 8 3 12 7 16"/>
+            <line x1="10" y1="19" x2="14" y2="5"/>
+            <polyline points="17 8 21 12 17 16"/>
           </svg>
         </a>
 
-        <a href="#assignments" class="dock-box-btn" aria-label="Coursework Assignments" data-tooltip="Assignments">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="4 17 10 11 4 5"/>
-            <line x1="12" y1="19" x2="20" y2="19"/>
+        <a href="#assignments" class="dock-box-btn" aria-label="Assignments" data-tooltip="Assignments">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="5 7 11 12 5 17"/>
+            <line x1="13" y1="17" x2="19" y2="17"/>
           </svg>
         </a>
 
         <a href="#papers" class="dock-box-btn" aria-label="Question Papers" data-tooltip="Exam Papers">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="6"/>
-            <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="9" r="5.5"/>
+            <path d="M8.2 13.5L7 21l5-2.5 5 2.5-1.2-7.5"/>
           </svg>
         </a>
 
         <a href="https://github.com/anshu706/Black-Beetle" target="_blank" rel="noopener noreferrer" class="dock-box-btn" aria-label="GitHub Repository" data-tooltip="GitHub">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z"/>
-            <path d="M19 16l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 3C13 8 9 12 4 12C9 12 13 16 13 21C13 16 17 12 22 12C17 12 13 8 13 3Z"/>
+            <path d="M5 4v4M3 6h4"/>
+            <path d="M19 17v3M17.5 18.5h3"/>
           </svg>
         </a>
       </nav>
-
-      <ul class="footer-nav-links">
-        <li><a href="#home" class="footer-nav-link">Home</a></li>
-        <li><a href="#notes" class="footer-nav-link">Notes</a></li>
-        <li><a href="#assignments" class="footer-nav-link">Assignments</a></li>
-        <li><a href="#papers" class="footer-nav-link">Question Papers</a></li>
-      </ul>
 
       <div class="footer-copy-text">
         &copy; 2026 Black Beetle &bull; Free Academic Resources
