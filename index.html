@@ -1,109 +1,109 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- ── SEO & Social ── -->
   <title>Black Beetle — Academic Resource Hub</title>
-  <meta name="description"
-    content="Black Beetle is a curated hub for semester notes, assignments, and previous year question papers — engineered for students who mean business." />
-  <meta name="keywords" content="notes, assignments, question papers, semester, mid sem, end sem, academic resources" />
+  <meta name="description" content="Black Beetle: Curated semester notes, assignments, and previous year question papers. Fast, organized, and free for every student." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://black-beetle.vercel.app/" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph & Social -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://black-beetle.vercel.app/" />
   <meta property="og:title" content="Black Beetle — Academic Resource Hub" />
-  <meta property="og:description" content="Curated semester notes, assignments, and exam papers. Fast. Organised. Free." />
+  <meta property="og:description" content="Oxide Burgundy & Porcelain Sand curated academic archive for semester notes, assignments, and question papers." />
   <meta property="og:image" content="https://black-beetle.vercel.app/og-image.png" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Black Beetle — Academic Resource Hub" />
-  <meta name="twitter:description" content="Curated semester notes, assignments, and exam papers." />
+  <meta name="twitter:description" content="Semester notes, assignments, and previous year exam papers." />
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪲</text></svg>" />
 
-  <!-- Fonts: Syne (display) + DM Sans (body) -->
+  <!-- Ransom Note & Typography Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Special+Elite&display=swap" rel="stylesheet" />
 
-  <!-- Anime.js v3 CDN -->
+  <!-- Anime.js v3 Animation Engine -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
   <style>
-    /* ═══════════════════════════════
-       DESIGN SYSTEM
-       Aesthetic: Dark Academic / Precision Noir
-       Tone: Refined + Utilitarian
-    ═══════════════════════════════ */
+    /* ══════════════════════════════════════════════════════════════
+       COLOR SYSTEM (from User Reference Image 1)
+       Oxide Burgundy:  HEX #54252F | RGB 84, 37, 47
+       Porcelain Sand:  HEX #E5D8C5 | RGB 229, 216, 197
+       ══════════════════════════════════════════════════════════════ */
     :root {
-      --bg: #07070c;
-      --bg-surface: #0e0e18;
-      --bg-raised: rgba(255,255,255,0.045);
-      --bg-raised-hover: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.07);
-      --border-hover: rgba(139,92,246,0.5);
-      --border-accent: rgba(139,92,246,0.25);
+      --oxide-burgundy:      #54252F;
+      --oxide-burgundy-dark: #37171e;
+      --oxide-burgundy-deep: #250d13;
+      --oxide-burgundy-mid:  #6c303c;
+      --oxide-burgundy-soft: #853e4c;
 
-      --ink: #eeeef5;
-      --ink-muted: rgba(238,238,245,0.45);
-      --ink-faint: rgba(238,238,245,0.22);
+      --porcelain-sand:      #E5D8C5;
+      --porcelain-sand-light:#f4ece0;
+      --porcelain-sand-muted:#d6c5ad;
+      --porcelain-sand-tan:  #bda587;
 
-      --violet: #8b5cf6;
-      --violet-dim: rgba(139,92,246,0.18);
-      --violet-glow: rgba(139,92,246,0.12);
-      --pink: #ec4899;
-      --cyan: #22d3ee;
+      --bg-page:             var(--oxide-burgundy);
+      --text-main:           var(--porcelain-sand);
+      --text-muted:          rgba(229, 216, 197, 0.65);
+      --text-faint:          rgba(229, 216, 197, 0.35);
 
-      --grad-title: linear-gradient(135deg, #fff 20%, #c4b5fd 55%, #ec4899 100%);
-      --grad-btn: linear-gradient(135deg, #8b5cf6, #6d28d9);
-      --grad-card: linear-gradient(145deg, rgba(139,92,246,0.06), transparent 60%);
+      --border-light:        rgba(229, 216, 197, 0.15);
+      --border-focus:        rgba(229, 216, 197, 0.5);
 
-      --r-sm: 10px;
-      --r-md: 16px;
-      --r-lg: 22px;
-      --r-xl: 32px;
+      --font-body:           'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display:        'Bebas Neue', sans-serif;
+      --font-typewriter:     'Special Elite', 'Courier Prime', monospace;
+      --font-serif:          'Playfair Display', serif;
+      --font-fatface:        'Abril Fatface', serif;
+      --font-marker:         'Permanent Marker', cursive;
+      --font-script:         'Pacifico', cursive;
 
-      --shadow-card: 0 4px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
-      --shadow-hover: 0 16px 64px rgba(0,0,0,0.6), 0 0 40px rgba(139,92,246,0.15);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
 
-      --font-display: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
+      --shadow-paper: 3px 5px 12px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.25);
+      --shadow-card:  0 10px 30px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0,0,0,0.2);
+      --shadow-hover: 0 18px 45px rgba(0, 0, 0, 0.55), 0 0 25px rgba(229, 216, 197, 0.1);
     }
 
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.65;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      position: relative;
     }
 
-    /* ── Noise grain overlay ── */
+    /* Film grain texture */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.045'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 999;
-      opacity: 0.5;
     }
 
-    /* ── Particle Canvas ── */
+    /* Background Particle Canvas */
     #particles {
       position: fixed;
       inset: 0;
@@ -111,1395 +111,1737 @@
       pointer-events: none;
     }
 
-    /* ═══════════════════════════════
-       NAV — floating glass pill
-    ═══════════════════════════════ */
-    nav {
+    /* Container alignment */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       HEADER & NAVIGATION
+       ══════════════════════════════════════════════════════════════ */
+    header {
       position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 200;
-      width: calc(100% - 48px);
-      max-width: 900px;
-      background: rgba(14,14,24,0.65);
-      backdrop-filter: blur(24px) saturate(160%);
-      -webkit-backdrop-filter: blur(24px) saturate(160%);
-      border: 1px solid var(--border-accent);
-      border-radius: 100px;
-      padding: 10px 20px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 18px 0;
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(45, 18, 24, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 12px 0;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: background 0.3s, box-shadow 0.3s;
-      opacity: 0;
     }
 
-    nav.scrolled {
-      background: rgba(7,7,12,0.85);
-      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-    }
-
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      background: var(--grad-title);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 4px;
-    }
-
-    .nav-links a {
+    /* Logo as Ransom Mini-Badge */
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
       text-decoration: none;
-      color: var(--ink-muted);
-      font-size: 0.82rem;
-      font-weight: 500;
-      padding: 7px 14px;
+      cursor: pointer;
+    }
+
+    .brand-tag {
+      font-family: var(--font-typewriter);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-right: 8px;
+      letter-spacing: 1px;
+    }
+
+    .logo-letter {
+      display: inline-block;
+      padding: 2px 7px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      border-radius: 2px;
+      box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .brand-logo:hover .logo-letter {
+      transform: translateY(-2px) scale(1.08) rotate(var(--hover-rot, 2deg)) !important;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 8px;
+    }
+
+    .nav-link {
+      font-family: var(--font-typewriter);
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--text-muted);
+      padding: 8px 18px;
       border-radius: 100px;
-      transition: all 0.2s;
-      letter-spacing: 0.01em;
+      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
+      border: 1px solid transparent;
     }
 
-    .nav-links a:hover {
-      color: var(--ink);
-      background: rgba(139,92,246,0.14);
+    .nav-link:hover, .nav-link:focus-visible {
+      color: var(--porcelain-sand);
+      background: rgba(229, 216, 197, 0.08);
+      border-color: var(--border-light);
     }
 
-    .mobile-toggle {
+    .mobile-menu-btn {
       display: none;
       background: none;
-      border: none;
-      color: var(--ink);
+      border: 1px solid var(--border-light);
+      color: var(--porcelain-sand);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
       cursor: pointer;
-      padding: 6px;
-      border-radius: 8px;
     }
 
-    .mobile-toggle svg { display: block; }
-
-    /* ═══════════════════════════════
-       HERO
-    ═══════════════════════════════ */
-    .hero {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
+    /* ══════════════════════════════════════════════════════════════
+       HERO SECTION WITH RANSOM NOTE TYPOGRAPHY & YIN-YANG
+       ══════════════════════════════════════════════════════════════ */
+    .hero-section {
+      min-height: 92vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 130px 0 60px;
       text-align: center;
-      padding: 140px 24px 100px;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--violet-dim);
-      border: 1px solid var(--border-accent);
-      padding: 5px 16px 5px 10px;
-      border-radius: 100px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #c4b5fd;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 36px;
-      opacity: 0;
-    }
-
-    .hero-eyebrow .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--violet);
-      box-shadow: 0 0 8px var(--violet);
-      animation: pulse 2s ease-in-out infinite;
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3.4rem, 9vw, 7.5rem);
-      font-weight: 800;
-      letter-spacing: -3px;
-      line-height: 0.95;
-      max-width: 900px;
-      background: var(--grad-title);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 28px;
-      opacity: 0;
-    }
-
-    .hero-sub {
-      font-size: 1.05rem;
-      color: var(--ink-muted);
-      max-width: 440px;
-      font-weight: 400;
-      line-height: 1.7;
-      margin-bottom: 44px;
-      opacity: 0;
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: center;
-      opacity: 0;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 30px;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      background: var(--grad-btn);
-      color: #fff;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 0 32px rgba(139,92,246,0.3);
-      transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s;
-      will-change: transform;
-      letter-spacing: 0.01em;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 10px 50px rgba(139,92,246,0.45);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 13px 26px;
-      border-radius: 100px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      background: transparent;
-      color: var(--ink-muted);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: all 0.25s;
-      letter-spacing: 0.01em;
-    }
-
-    .btn-secondary:hover {
-      color: var(--ink);
-      border-color: var(--border-hover);
-      background: var(--violet-dim);
-    }
-
-    /* Scroll hint */
-    .scroll-hint {
-      position: absolute;
-      bottom: 36px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: var(--ink-faint);
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      animation: bounce 2.5s ease-in-out infinite;
-      opacity: 0;
-    }
-
-    .scroll-hint svg {
-      opacity: 0.5;
-    }
-
-    /* ═══════════════════════════════
-       SEARCH BAR
-    ═══════════════════════════════ */
-    .search-wrap {
       position: relative;
-      z-index: 1;
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
     }
 
-    .search-box {
-      position: relative;
+    /* Subdued corner coordinates & metadata just like Image 1 */
+    .hero-meta-row {
       display: flex;
-      align-items: center;
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 18px;
-      color: var(--ink-muted);
-      pointer-events: none;
-    }
-
-    #searchInput {
+      justify-content: space-between;
       width: 100%;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-accent);
-      border-radius: 100px;
-      padding: 15px 20px 15px 50px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: var(--ink);
-      outline: none;
-      transition: border 0.25s, box-shadow 0.25s;
+      max-width: 820px;
+      font-family: var(--font-typewriter);
+      font-size: 0.85rem;
+      letter-spacing: 1.5px;
+      color: var(--porcelain-sand);
+      margin-bottom: 24px;
+      padding: 0 10px;
+      opacity: 0.85;
     }
 
-    #searchInput::placeholder { color: var(--ink-faint); }
-
-    #searchInput:focus {
-      border-color: var(--violet);
-      box-shadow: 0 0 0 3px rgba(139,92,246,0.15), 0 0 24px rgba(139,92,246,0.1);
-    }
-
-    .filter-chips {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 16px;
-    }
-
-    .chip {
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid var(--border);
-      color: var(--ink-muted);
-      background: transparent;
-      font-family: var(--font-body);
-      transition: all 0.2s;
-      letter-spacing: 0.02em;
-    }
-
-    .chip.active, .chip:hover {
-      background: var(--violet-dim);
-      border-color: var(--violet);
-      color: #c4b5fd;
-    }
-
-    .no-results {
-      text-align: center;
-      padding: 60px 0;
-      color: var(--ink-muted);
-      display: none;
-    }
-
-    /* ═══════════════════════════════
-       SECTIONS
-    ═══════════════════════════════ */
-    .section {
-      position: relative;
-      z-index: 1;
-      padding: 80px 24px 100px;
-    }
-
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      margin-bottom: 48px;
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--violet);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .section-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      line-height: 1.1;
-      background: linear-gradient(135deg, #fff 30%, #c4b5fd 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .section-header p {
-      color: var(--ink-muted);
-      margin-top: 10px;
-      font-size: 0.95rem;
-    }
-
-    /* Divider line */
-    .section-divider {
-      width: 48px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--violet), transparent);
-      margin: 16px 0 0;
-      border-radius: 2px;
-    }
-
-    /* ═══════════════════════════════
-       CARDS GRID
-    ═══════════════════════════════ */
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 16px;
-    }
-
-    /* Resource card — full card is clickable */
-    .card {
-      position: relative;
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      transition: all 0.35s cubic-bezier(.4,0,.2,1);
-      will-change: transform;
-      box-shadow: var(--shadow-card);
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--grad-card);
-      opacity: 0;
-      transition: opacity 0.35s;
-      pointer-events: none;
-      border-radius: inherit;
-    }
-
-    .card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-8px) scale(1.01);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .card:hover::before { opacity: 1; }
-
-    /* Magnetic hover effect via JS */
-    .card-link {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      padding: 28px 24px 24px;
-    }
-
-    .card-link:focus-visible {
-      outline: 2px solid var(--violet);
-      outline-offset: 3px;
-      border-radius: var(--r-lg);
-    }
-
-    .card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--violet-dim);
-      border: 1px solid var(--border-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-    }
-
-    .card-icon svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .card h3 {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .card-desc {
-      font-size: 0.82rem;
-      color: var(--ink-muted);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .card-action {
+    .hero-meta-row span {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #c4b5fd;
-      transition: gap 0.2s, color 0.2s;
     }
 
-    .card:hover .card-action {
-      gap: 10px;
-      color: var(--violet);
-    }
-
-    .card-action svg {
-      transition: transform 0.2s;
-    }
-    .card:hover .card-action svg {
-      transform: translateX(3px);
-    }
-
-    /* Sem badge */
-    .sem-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: var(--violet-dim);
-      border: 1px solid var(--border-accent);
-      color: var(--violet);
-      padding: 3px 10px;
-      border-radius: 100px;
-    }
-
-    /* ═══════════════════════════════
-       PAPERS GRID — wider cards
-    ═══════════════════════════════ */
-    .papers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 16px;
-    }
-
-    .paper-card .card-link {
-      padding: 28px 24px;
-    }
-
-    .paper-card .sem-links {
+    /* Ransom Note Title Wrapper */
+    .ransom-container {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-top: 14px;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 10px 0 32px;
+      user-select: none;
     }
 
-    .paper-card .sem-link {
+    .ransom-row {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: var(--r-sm);
-      background: rgba(255,255,255,0.025);
-      border: 1px solid var(--border);
-      color: var(--ink-muted);
-      font-weight: 500;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Ransom Cut-Out Letter (Matches Image 2 Style) */
+    .ransom-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 58px;
+      height: 78px;
+      padding: 6px 14px;
+      border-radius: 3px;
+      box-shadow: var(--shadow-paper);
+      cursor: default;
+      will-change: transform;
+      position: relative;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s;
+    }
+
+    .ransom-letter:hover {
+      transform: scale(1.18) rotate(0deg) !important;
+      z-index: 15;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Tape overlay detail on random letters */
+    .ransom-letter.taped::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 15%;
+      width: 70%;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.35);
+      border-left: 1px dashed rgba(0,0,0,0.15);
+      border-right: 1px dashed rgba(0,0,0,0.15);
+      transform: rotate(-2deg);
+      pointer-events: none;
+    }
+
+    .letter-text {
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    /* Hero Subtitle */
+    .hero-subheading {
+      font-family: var(--font-typewriter);
+      font-size: 1.15rem;
+      max-width: 540px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin: 0 auto 36px;
+    }
+
+    /* Dual Tone Yin-Yang Swatch Component (Direct from Image 1) */
+    .swatch-display-card {
+      width: 100%;
+      max-width: 680px;
+      margin: 10px auto 44px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      border: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Top Half: Oxide Burgundy */
+    .swatch-half.top-half {
+      background-color: var(--oxide-burgundy-dark);
+      color: var(--porcelain-sand);
+      padding: 32px 36px 36px;
+      border-bottom: 2px dashed rgba(229, 216, 197, 0.15);
+      position: relative;
+    }
+
+    /* Bottom Half: Porcelain Sand */
+    .swatch-half.bottom-half {
+      background-color: var(--porcelain-sand);
+      color: var(--oxide-burgundy);
+      padding: 36px 36px 32px;
+      position: relative;
+    }
+
+    .swatch-corner-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-typewriter);
       font-size: 0.85rem;
-      transition: all 0.2s;
-      text-decoration: none;
-      position: relative;
-      overflow: hidden;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
     }
 
-    .paper-card .sem-link::after {
-      content: '→';
-      margin-left: auto;
-      opacity: 0;
-      transition: opacity 0.2s, transform 0.2s;
-      transform: translateX(-6px);
+    .swatch-half.top-half .swatch-corner-bar {
+      color: rgba(229, 216, 197, 0.7);
+    }
+    .swatch-half.bottom-half .swatch-corner-bar {
+      color: rgba(84, 37, 47, 0.75);
     }
 
-    .paper-card .sem-link:hover {
-      background: var(--violet-dim);
-      border-color: var(--border-hover);
-      color: var(--ink);
-    }
-
-    .paper-card .sem-link:hover::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .sem-link-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--violet);
-      opacity: 0.5;
-      flex-shrink: 0;
-    }
-
-    /* ═══════════════════════════════
-       STATS STRIP
-    ═══════════════════════════════ */
-    .stats-strip {
-      position: relative;
-      z-index: 1;
-      padding: 0 24px 80px;
-    }
-
-    .stats-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-
-    .stat-cell {
-      background: var(--bg-surface);
-      padding: 36px 28px;
-      text-align: center;
-      transition: background 0.3s;
-    }
-
-    .stat-cell:hover {
-      background: var(--bg-raised-hover);
-    }
-
-    .stat-num {
+    .swatch-title {
       font-family: var(--font-display);
-      font-size: 2.4rem;
-      font-weight: 800;
-      letter-spacing: -2px;
-      background: var(--grad-title);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      line-height: 0.95;
+      letter-spacing: 4px;
+      margin: 12px 0 20px;
+      text-transform: uppercase;
+    }
+
+    .swatch-footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-typewriter);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    /* The Iconic Yin-Yang Center Medallion (from Image 1) */
+    .yin-yang-connector {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 68px;
+      height: 68px;
+      z-index: 10;
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+
+    .yin-yang-connector:hover {
+      transform: translate(-50%, -50%) rotate(180deg) scale(1.12);
+    }
+
+    .yin-yang-svg {
+      width: 100%;
+      height: 100%;
       display: block;
     }
 
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--ink-muted);
-      margin-top: 4px;
-      letter-spacing: 0.03em;
-    }
-
-    /* ═══════════════════════════════
-       FOOTER
-    ═══════════════════════════════ */
-    footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 40px 24px;
-      display: flex;
+    /* Hero CTA Button */
+    .hero-cta-btn {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      max-width: 1248px;
-      margin: 0 auto;
-    }
-
-    .footer-brand {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 1rem;
-      background: var(--grad-title);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .footer-links a {
-      color: var(--ink-muted);
+      gap: 12px;
+      padding: 16px 42px;
+      background-color: var(--porcelain-sand);
+      color: var(--oxide-burgundy);
       text-decoration: none;
-      font-size: 0.82rem;
-      transition: color 0.2s;
+      font-family: var(--font-typewriter);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-radius: 100px;
+      box-shadow: var(--shadow-paper);
+      transition: all 0.25s ease;
+      cursor: pointer;
     }
 
-    .footer-links a:hover { color: var(--ink); }
-
-    .footer-copy {
-      color: var(--ink-faint);
-      font-size: 0.78rem;
+    .hero-cta-btn:hover {
+      background-color: #fff;
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
     }
 
-    /* ═══════════════════════════════
-       ANIMATIONS & KEYFRAMES
-    ═══════════════════════════════ */
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
+    /* ══════════════════════════════════════════════════════════════
+       STATS & MARQUEE STRIP
+       ══════════════════════════════════════════════════════════════ */
+    .stats-wrapper {
+      padding: 40px 0 60px;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
+    .stats-card-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      background-color: var(--oxide-burgundy-dark);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
     }
 
-    @keyframes marquee {
-      0% { transform: translateX(0); }
+    .stat-box {
+      padding: 32px 24px;
+      text-align: center;
+      border-right: 1px solid var(--border-light);
+      transition: background-color 0.2s ease;
+    }
+
+    .stat-box:last-child {
+      border-right: none;
+    }
+
+    .stat-box:hover {
+      background-color: rgba(229, 216, 197, 0.04);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 3.4rem;
+      line-height: 1;
+      color: var(--porcelain-sand);
+      letter-spacing: 2px;
+    }
+
+    .stat-title {
+      font-family: var(--font-typewriter);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* Infinite Marquee */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 14px 0;
+      margin: 40px 0 70px;
+      background: rgba(37, 13, 19, 0.45);
+    }
+
+    .marquee-content {
+      display: flex;
+      width: max-content;
+      gap: 40px;
+      animation: scrollMarquee 26s linear infinite;
+    }
+
+    .marquee-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      color: var(--porcelain-sand);
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .tag-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--porcelain-sand);
+      opacity: 0.6;
+    }
+
+    @keyframes scrollMarquee {
+      0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+    /* ══════════════════════════════════════════════════════════════
+       SEARCH & QUICK FILTER CONTROLS
+       ══════════════════════════════════════════════════════════════ */
+    .search-filter-section {
+      max-width: 680px;
+      margin: 0 auto 60px;
+      text-align: center;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ═══════════════════════════════
-       MARQUEE STRIP
-    ═══════════════════════════════ */
-    .marquee-wrap {
+    .search-input-box {
       position: relative;
-      z-index: 1;
-      overflow: hidden;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 0;
-      margin-bottom: 80px;
-      mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+      margin-bottom: 20px;
     }
 
-    .marquee-track {
+    .search-icon-svg {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    #resourceSearch {
+      width: 100%;
+      padding: 16px 24px 16px 54px;
+      background-color: var(--oxide-burgundy-dark);
+      border: 1px solid var(--border-light);
+      border-radius: 100px;
+      color: var(--porcelain-sand);
+      font-family: var(--font-typewriter);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.25s ease;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    #resourceSearch::placeholder {
+      color: var(--text-faint);
+    }
+
+    #resourceSearch:focus {
+      border-color: var(--border-focus);
+      background-color: var(--oxide-burgundy-deep);
+      box-shadow: 0 0 0 4px rgba(229, 216, 197, 0.12);
+    }
+
+    .filter-pills {
       display: flex;
-      gap: 48px;
-      width: max-content;
-      animation: marquee 24s linear infinite;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .marquee-item {
+    .filter-pill {
+      font-family: var(--font-typewriter);
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      padding: 8px 20px;
+      background: transparent;
+      border: 1px solid var(--border-light);
+      border-radius: 100px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-pill:hover, .filter-pill.active {
+      background-color: var(--porcelain-sand);
+      color: var(--oxide-burgundy);
+      border-color: var(--porcelain-sand);
+      font-weight: 700;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION HEADERS (Editorial & Brutalist)
+       ══════════════════════════════════════════════════════════════ */
+    .section-block {
+      padding: 70px 0 90px;
+      position: relative;
+    }
+
+    .section-header-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-typewriter);
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      color: var(--porcelain-sand);
+      opacity: 0.75;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-main-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      letter-spacing: 3px;
+      line-height: 1;
+      color: var(--porcelain-sand);
+      text-transform: uppercase;
+    }
+
+    .section-underline {
+      width: 56px;
+      height: 3px;
+      background-color: var(--porcelain-sand);
+      margin-top: 16px;
+      border-radius: 2px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       CARD GRIDS: PRECISION SWATCH CARDS (Inspired by Image 1)
+       ══════════════════════════════════════════════════════════════ */
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    /* The Swatch-Style Resource Card */
+    .swatch-card {
+      background-color: var(--porcelain-sand);
+      color: var(--oxide-burgundy);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px 22px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      text-decoration: none;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      min-height: 250px;
+      overflow: hidden;
+    }
+
+    /* Alternating cards in Burgundy dark swatch style */
+    .swatch-card.burgundy-variant {
+      background-color: var(--oxide-burgundy-dark);
+      color: var(--porcelain-sand);
+      border: 1px solid var(--border-light);
+    }
+
+    .swatch-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Card Top Metadata Bar */
+    .card-meta-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-typewriter);
+      font-size: 0.76rem;
+      letter-spacing: 1px;
+      opacity: 0.8;
+      margin-bottom: 24px;
+    }
+
+    .card-badge-sem {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .swatch-card .card-badge-sem {
+      background-color: rgba(84, 37, 47, 0.12);
+      color: var(--oxide-burgundy);
+    }
+
+    .swatch-card.burgundy-variant .card-badge-sem {
+      background-color: rgba(229, 216, 197, 0.15);
+      color: var(--porcelain-sand);
+    }
+
+    /* Card Middle Content */
+    .card-center-content {
+      margin-bottom: 24px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.95rem;
+      letter-spacing: 1.5px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-family: var(--font-typewriter);
+      font-size: 0.8rem;
+      line-height: 1.5;
+      opacity: 0.82;
+    }
+
+    /* Card Bottom Technical Bar (HEX / RGB / Action) */
+    .card-meta-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-typewriter);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      border-top: 1px dashed rgba(84, 37, 47, 0.2);
+      padding-top: 14px;
+    }
+
+    .swatch-card.burgundy-variant .card-meta-bottom {
+      border-top-color: rgba(229, 216, 197, 0.2);
+    }
+
+    .card-action-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.2s ease;
+    }
+
+    .swatch-card:hover .card-action-link {
+      gap: 9px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       PAPERS SECTION: QUESTION PAPERS DOSSIER
+       ══════════════════════════════════════════════════════════════ */
+    .papers-grid-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    .paper-dossier-card {
+      background-color: var(--porcelain-sand);
+      color: var(--oxide-burgundy);
+      border-radius: var(--radius-xl);
+      padding: 32px 30px 28px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .paper-dossier-card.burgundy-dossier {
+      background-color: var(--oxide-burgundy-dark);
+      color: var(--porcelain-sand);
+      border: 1px solid var(--border-light);
+    }
+
+    .paper-sem-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .paper-row-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      white-space: nowrap;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-family: var(--font-typewriter);
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
     }
 
-    .marquee-item .m-dot {
-      width: 5px;
-      height: 5px;
+    .paper-dossier-card .paper-row-item {
+      background-color: rgba(84, 37, 47, 0.06);
+      color: var(--oxide-burgundy);
+      border: 1px solid rgba(84, 37, 47, 0.12);
+    }
+
+    .paper-dossier-card .paper-row-item:hover {
+      background-color: var(--oxide-burgundy);
+      color: var(--porcelain-sand);
+      transform: translateX(4px);
+    }
+
+    .paper-dossier-card.burgundy-dossier .paper-row-item {
+      background-color: rgba(229, 216, 197, 0.06);
+      color: var(--porcelain-sand);
+      border: 1px solid rgba(229, 216, 197, 0.12);
+    }
+
+    .paper-dossier-card.burgundy-dossier .paper-row-item:hover {
+      background-color: var(--porcelain-sand);
+      color: var(--oxide-burgundy);
+      transform: translateX(4px);
+    }
+
+    .paper-sem-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .paper-indicator {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: var(--violet);
+      background-color: currentColor;
+      opacity: 0.6;
     }
 
-    /* ═══════════════════════════════
-       MOBILE
-    ═══════════════════════════════ */
-    @media (max-width: 768px) {
-      nav {
-        top: 12px;
-        width: calc(100% - 32px);
-        border-radius: 20px;
-        padding: 12px 16px;
-      }
+    /* ══════════════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--border-light);
+      padding: 50px 0 35px;
+      background-color: var(--oxide-burgundy-deep);
+      position: relative;
+      z-index: 1;
+    }
 
-      .nav-links {
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-left-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: var(--porcelain-sand);
+    }
+
+    .footer-brand-sub {
+      font-family: var(--font-typewriter);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer-nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .footer-nav-link {
+      font-family: var(--font-typewriter);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-link:hover {
+      color: var(--porcelain-sand);
+    }
+
+    .footer-meta-pill {
+      font-family: var(--font-typewriter);
+      font-size: 0.75rem;
+      padding: 6px 14px;
+      border-radius: 100px;
+      border: 1px solid var(--border-light);
+      color: var(--text-faint);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       UTILITY & RESPONSIVE DESIGN
+       ══════════════════════════════════════════════════════════════ */
+    .hidden {
+      display: none !important;
+    }
+
+    .no-results-banner {
+      text-align: center;
+      padding: 60px 20px;
+      font-family: var(--font-typewriter);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      display: none;
+    }
+
+    @media (max-width: 820px) {
+      .stats-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .stat-box:nth-child(2) {
+        border-right: none;
+      }
+      .stat-box:nth-child(1), .stat-box:nth-child(2) {
+        border-bottom: 1px solid var(--border-light);
+      }
+      .hero-meta-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .swatch-corner-bar, .swatch-footer-bar {
+        font-size: 0.75rem;
+      }
+      .yin-yang-connector {
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-menu {
         display: none;
         position: absolute;
-        top: calc(100% + 10px);
+        top: 100%;
         left: 0;
         width: 100%;
+        background-color: var(--oxide-burgundy-deep);
+        padding: 20px;
         flex-direction: column;
-        background: rgba(10,10,20,0.97);
-        backdrop-filter: blur(20px);
-        border: 1px solid var(--border-accent);
-        border-radius: 20px;
-        padding: 12px;
-        gap: 2px;
+        border-bottom: 1px solid var(--border-light);
       }
-
-      .nav-links.open { display: flex; }
-
-      .nav-links a {
-        border-radius: 12px;
-        padding: 10px 16px;
+      .nav-menu.active {
+        display: flex;
       }
-
-      .mobile-toggle { display: block; }
-
-      .hero h1 { letter-spacing: -2px; }
-
-      .cards-grid,
-      .papers-grid { grid-template-columns: 1fr; }
-
-      .stats-inner { grid-template-columns: repeat(2, 1fr); }
-
-      .contribute-card {
+      .mobile-menu-btn {
+        display: block;
+      }
+      .ransom-letter {
+        min-width: 44px;
+        height: 60px;
+        padding: 4px 8px;
+      }
+      .letter-text {
+        font-size: 2.2rem;
+      }
+      .swatch-display-card {
+        border-radius: var(--radius-lg);
+      }
+      .swatch-half.top-half, .swatch-half.bottom-half {
+        padding: 24px 20px;
+      }
+      .footer-inner {
         flex-direction: column;
-        padding: 40px 28px;
-        text-align: center;
+        align-items: flex-start;
       }
-
-      footer { flex-direction: column; align-items: center; text-align: center; }
-
-      .section { padding: 60px 16px 80px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+      .footer-nav-links {
+        flex-wrap: wrap;
       }
-      .marquee-track { animation: none; }
     }
-
-    /* hidden utility */
-    .hidden { display: none !important; }
   </style>
 </head>
-
 <body>
+
+  <!-- Particle Background Effect -->
   <canvas id="particles"></canvas>
 
-  <!-- ── Navigation ── -->
-  <nav id="mainNav" aria-label="Main navigation">
-    <div class="logo" aria-label="Black Beetle">Black Beetle</div>
-    <button class="mobile-toggle" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
-    </button>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#notes">Notes</a></li>
-      <li><a href="#assignments">Assignments</a></li>
-      <li><a href="#papers">Papers</a></li>
-    </ul>
-  </nav>
-
-  <!-- ── Hero ── -->
-  <section id="home" class="hero" aria-labelledby="hero-heading">
-    <div class="hero-eyebrow" id="heroEyebrow">
-      <span class="dot" aria-hidden="true"></span>
-      Academic Resource Hub
-    </div>
-    <h1 id="hero-heading">Black<br>Beetle</h1>
-    <p class="hero-sub">
-      Semester notes, assignments, and exam papers — curated, organised, and always free.
-    </p>
-    <div class="hero-actions">
-      <a href="#notes" class="btn-primary">
-        Explore Resources
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+  <!-- ══════════════════════════════════════════════════════════════
+       TOP HEADER & NAVIGATION
+       ══════════════════════════════════════════════════════════════ -->
+  <header id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#home" class="brand-logo" aria-label="Black Beetle Home">
+        <span class="brand-tag">@BlackBeetle</span>
+        <span class="logo-letter" style="background:#E5D8C5; color:#54252F; font-family:'Abril Fatface',serif; transform:rotate(-4deg); --hover-rot: -1deg;">B</span>
+        <span class="logo-letter" style="background:#54252F; color:#E5D8C5; font-family:'Bebas Neue',sans-serif; border:1px solid rgba(229,216,197,0.3); transform:rotate(2deg); --hover-rot: 4deg;">B</span>
       </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#notes" class="nav-link">Notes</a></li>
+        <li><a href="#assignments" class="nav-link">Assignments</a></li>
+        <li><a href="#papers" class="nav-link">Papers</a></li>
+      </ul>
     </div>
-    <div class="scroll-hint" id="scrollHint" aria-hidden="true">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-      Scroll
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       HERO SECTION: RANSOM NOTE + YIN-YANG CARD
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="hero-section" id="home">
+    <div class="container" style="display:flex; flex-direction:column; align-items:center;">
+
+      <!-- Top metadata coordinates as in Image 1 -->
+      <div class="hero-meta-row">
+        <span>@BlackBeetle</span>
+        <span>ACADEMIC ARCHIVE</span>
+        <span>©2026</span>
+      </div>
+
+      <!-- RANSOM NOTE TITLE: BLACK BEETLE (Accurately styled after Image 2) -->
+      <div class="ransom-container" id="ransomTitle" role="heading" aria-level="1">
+        <!-- Word 1: BLACK -->
+        <div class="ransom-row">
+          <!-- B: Blue cutout, serif -->
+          <div class="ransom-letter taped" style="background:#1e3a8a; color:#ffffff; font-family:'Playfair Display',serif; transform:rotate(-3deg);">
+            <span class="letter-text">B</span>
+          </div>
+          <!-- L: Sand cutout, bold sans -->
+          <div class="ransom-letter" style="background:#E5D8C5; color:#54252F; font-family:'Abril Fatface',serif; transform:rotate(2deg);">
+            <span class="letter-text">L</span>
+          </div>
+          <!-- A: Crimson red cutout -->
+          <div class="ransom-letter" style="background:#b91c1c; color:#ffffff; font-family:'Bebas Neue',sans-serif; transform:rotate(-4deg);">
+            <span class="letter-text">A</span>
+          </div>
+          <!-- C: Grid paper cutout, typewriter -->
+          <div class="ransom-letter taped" style="background:#f4ece0; color:#1a1a1a; font-family:'Special Elite',cursive; background-image:radial-gradient(#bbb 1px, transparent 1px); background-size:8px 8px; transform:rotate(3deg);">
+            <span class="letter-text">C</span>
+          </div>
+          <!-- K: Pink cutout, marker -->
+          <div class="ransom-letter" style="background:#f472b6; color:#3d1c24; font-family:'Permanent Marker',cursive; transform:rotate(-2deg);">
+            <span class="letter-text">K</span>
+          </div>
+        </div>
+
+        <!-- Word 2: BEETLE -->
+        <div class="ransom-row">
+          <!-- B: Deep burgundy, Abril -->
+          <div class="ransom-letter" style="background:#54252F; color:#E5D8C5; border:1px solid rgba(229,216,197,0.3); font-family:'Abril Fatface',serif; transform:rotate(-2.5deg);">
+            <span class="letter-text">B</span>
+          </div>
+          <!-- E: Bubblegum pink cutout -->
+          <div class="ransom-letter taped" style="background:#f43f5e; color:#ffffff; font-family:'DM Sans',sans-serif; font-weight:900; transform:rotate(3.5deg);">
+            <span class="letter-text">E</span>
+          </div>
+          <!-- E: Kraft tan cutout, typewriter -->
+          <div class="ransom-letter" style="background:#c4a882; color:#3d1c24; font-family:'Courier Prime',monospace; transform:rotate(-3deg);">
+            <span class="letter-text">E</span>
+          </div>
+          <!-- T: Cerulean blue script cutout -->
+          <div class="ransom-letter" style="background:#0284c7; color:#ffffff; font-family:'Pacifico',cursive; transform:rotate(2deg);">
+            <span class="letter-text">T</span>
+          </div>
+          <!-- L: Rose pink cutout -->
+          <div class="ransom-letter" style="background:#fb7185; color:#ffffff; font-family:'Bebas Neue',sans-serif; transform:rotate(-4deg);">
+            <span class="letter-text">L</span>
+          </div>
+          <!-- E: Antique cream, playfair -->
+          <div class="ransom-letter taped" style="background:#fef3c7; color:#54252F; font-family:'Playfair Display',serif; font-style:italic; transform:rotate(2.5deg);">
+            <span class="letter-text">E</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="hero-subheading">
+        Every semester note, coursework assignment, and previous year exam paper — systematically cataloged and freely accessible.
+      </p>
+
+      <!-- ══════════════════════════════════════════════════════════
+           THE SIGNATURE YIN-YANG CARD (Direct from User Image 1)
+           ══════════════════════════════════════════════════════════ -->
+      <div class="swatch-display-card">
+        <!-- Center Interlocking Yin-Yang Medallion -->
+        <div class="yin-yang-connector" title="Oxide Burgundy & Porcelain Sand Harmony">
+          <svg class="yin-yang-svg" viewBox="0 0 100 100">
+            <!-- Outer circle -->
+            <path d="M 50,0 A 50,50 0 0,1 50,100 A 25,25 0 0,1 50,50 A 25,25 0 0,0 50,0" fill="#54252F"/>
+            <path d="M 50,100 A 50,50 0 0,1 50,0 A 25,25 0 0,1 50,50 A 25,25 0 0,0 50,100" fill="#E5D8C5"/>
+            <!-- Inner dots -->
+            <circle cx="50" cy="25" r="7" fill="#E5D8C5"/>
+            <circle cx="50" cy="75" r="7" fill="#54252F"/>
+          </svg>
+        </div>
+
+        <!-- Top Swatch: Oxide Burgundy -->
+        <div class="swatch-half top-half">
+          <div class="swatch-corner-bar">
+            <span>@BlackBeetle</span>
+            <span>©2026</span>
+          </div>
+          <h2 class="swatch-title">OXIDE BURGUNDY</h2>
+          <div class="swatch-footer-bar">
+            <span>HEX &nbsp;#54252F</span>
+            <span>RGB &nbsp;84, 37, 47</span>
+          </div>
+        </div>
+
+        <!-- Bottom Swatch: Porcelain Sand -->
+        <div class="swatch-half bottom-half">
+          <div class="swatch-corner-bar">
+            <span>@BlackBeetle</span>
+            <span>©2026</span>
+          </div>
+          <h2 class="swatch-title">PORCELAIN SAND</h2>
+          <div class="swatch-footer-bar">
+            <span>HEX &nbsp;#E5D8C5</span>
+            <span>RGB &nbsp;229, 216, 197</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <a href="#notes" class="hero-cta-btn">
+        <span>Explore All Semesters</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </a>
+
     </div>
   </section>
 
-  <!-- ── Stats Strip ── -->
-  <div class="stats-strip" aria-label="Quick stats">
-    <div class="stats-inner reveal">
-      <div class="stat-cell">
-        <span class="stat-num" data-count="8">0</span>
-        <span class="stat-label">Semesters</span>
+  <!-- ══════════════════════════════════════════════════════════════
+       STATS BAR
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="stats-wrapper">
+    <div class="container">
+      <div class="stats-card-grid">
+        <div class="stat-box">
+          <div class="stat-number" data-count="8">0</div>
+          <div class="stat-title">Semesters Indexed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" data-count="3">0</div>
+          <div class="stat-title">Resource Categories</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number" data-count="20" data-suffix="+">0</div>
+          <div class="stat-title">Cloud Folders</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">FREE</div>
+          <div class="stat-title">Open to All</div>
+        </div>
       </div>
-      <div class="stat-cell">
-        <span class="stat-num" data-count="3">0</span>
-        <span class="stat-label">Resource Types</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-num" data-count="20" data-suffix="+">0</span>
-        <span class="stat-label">Drive Folders</span>
-      </div>
-      <div class="stat-cell">
-        <span class="stat-num">Free</span>
-        <span class="stat-label">Always</span>
-      </div>
+    </div>
+  </section>
+
+  <!-- Infinite Marquee Label Strip -->
+  <div class="marquee-container" aria-hidden="true">
+    <div class="marquee-content">
+      <div class="marquee-tag"><span class="tag-bullet"></span>Oxide Burgundy</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Porcelain Sand</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Semester Notes</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Lab Assignments</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Mid-Sem Exams</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>End-Sem Exams</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Black Beetle Vault</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Sem 1 to Sem 8</div>
+      <!-- Duplicate for looping -->
+      <div class="marquee-tag"><span class="tag-bullet"></span>Oxide Burgundy</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Porcelain Sand</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Semester Notes</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Lab Assignments</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Mid-Sem Exams</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>End-Sem Exams</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Black Beetle Vault</div>
+      <div class="marquee-tag"><span class="tag-bullet"></span>Sem 1 to Sem 8</div>
     </div>
   </div>
 
-  <!-- ── Search + Filter ── -->
-  <div class="search-wrap reveal" role="search" aria-label="Search resources">
-    <div class="search-box">
-      <span class="search-icon" aria-hidden="true">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </span>
-      <input type="search" id="searchInput" placeholder="Search by semester, type, subject…" autocomplete="off" aria-label="Search resources" />
+  <!-- ══════════════════════════════════════════════════════════════
+       SEARCH & FILTER BAR
+       ══════════════════════════════════════════════════════════════ -->
+  <div class="container">
+    <div class="search-filter-section">
+      <div class="search-input-box">
+        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="resourceSearch" placeholder="Search semester, subject, or material..." autocomplete="off" aria-label="Search resources" />
+      </div>
+      <div class="filter-pills" role="group" aria-label="Filter category">
+        <button class="filter-pill active" data-filter="all">ALL RESOURCES</button>
+        <button class="filter-pill" data-filter="notes">NOTES</button>
+        <button class="filter-pill" data-filter="assignments">ASSIGNMENTS</button>
+        <button class="filter-pill" data-filter="papers">QUESTION PAPERS</button>
+      </div>
     </div>
-    <div class="filter-chips" role="group" aria-label="Filter by type">
-      <button class="chip active" data-filter="all">All Resources</button>
-      <button class="chip" data-filter="notes">Notes</button>
-      <button class="chip" data-filter="assignments">Assignments</button>
-      <button class="chip" data-filter="papers">Papers</button>
-    </div>
-  </div>
-
-  <!-- ── Marquee Strip ── -->
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee-track">
-      <!-- Duplicated for seamless loop -->
-      <span class="marquee-item"><span class="m-dot"></span>Semester Notes</span>
-      <span class="marquee-item"><span class="m-dot"></span>Assignments</span>
-      <span class="marquee-item"><span class="m-dot"></span>Mid-Sem Papers</span>
-      <span class="marquee-item"><span class="m-dot"></span>End-Sem Papers</span>
-      <span class="marquee-item"><span class="m-dot"></span>Sem 1 to Sem 8</span>
-      <span class="marquee-item"><span class="m-dot"></span>Google Drive</span>
-      <span class="marquee-item"><span class="m-dot"></span>Always Free</span>
-      <span class="marquee-item"><span class="m-dot"></span>Semester Notes</span>
-      <span class="marquee-item"><span class="m-dot"></span>Assignments</span>
-      <span class="marquee-item"><span class="m-dot"></span>Mid-Sem Papers</span>
-      <span class="marquee-item"><span class="m-dot"></span>End-Sem Papers</span>
-      <span class="marquee-item"><span class="m-dot"></span>Sem 1 to Sem 8</span>
-      <span class="marquee-item"><span class="m-dot"></span>Google Drive</span>
-      <span class="marquee-item"><span class="m-dot"></span>Always Free</span>
+    <div class="no-results-banner" id="noResultsAlert">
+      No resources matching your search were found.
     </div>
   </div>
 
-  <!-- ── NOTES SECTION ── -->
-  <section id="notes" class="section" data-section="notes" aria-labelledby="notes-heading">
-    <div class="section-inner">
-      <div class="section-header reveal">
-        <span class="section-label">Study Material</span>
-        <h2 id="notes-heading">Semester Notes</h2>
-        <div class="section-divider"></div>
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION 1: SEMESTER NOTES
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section-block" id="notes" data-category="notes">
+    <div class="container">
+      <div class="section-header-wrap">
+        <span class="section-eyebrow">Dossier // 01</span>
+        <h2 class="section-main-title">Semester Notes</h2>
+        <div class="section-underline"></div>
       </div>
-      <div class="cards-grid" id="notesGrid">
 
-        <div class="card reveal" data-type="notes" data-sem="1">
-          <div class="sem-badge">Sem 1</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View 1st Semester Notes">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>1st Semester</h3>
-            <p class="card-desc">Foundation subjects, core concepts, and introductory material.</p>
-            <span class="card-action">View Notes <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
+      <div class="resource-grid" id="notesGrid">
+        <!-- Sem 1 -->
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="1">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 01</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">1st Semester</h3>
+            <p class="card-desc">Foundational modules, engineering basics, calculus, and programming essentials.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>NOTES ARCHIVE</span>
+            <span class="card-action-link">OPEN DRIVE &rarr;</span>
+          </div>
+        </a>
 
-        <div class="card reveal" data-type="notes" data-sem="2">
-          <div class="sem-badge">Sem 2</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1vDP4evjZf9xndmd0HPOW01M0nqN-hrC1?usp=drive_link" target="_blank" rel="noopener noreferrer" aria-label="View 2nd Semester Notes">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>2nd Semester</h3>
-            <p class="card-desc">Building on the foundation with deeper subject matter.</p>
-            <span class="card-action">View Notes <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
+        <!-- Sem 2 -->
+        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1vDP4evjZf9xndmd0HPOW01M0nqN-hrC1?usp=drive_link" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="2">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 02</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">2nd Semester</h3>
+            <p class="card-desc">Advanced introductory series, circuit theory, discrete maths, and core logic.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>NOTES ARCHIVE</span>
+            <span class="card-action-link">OPEN DRIVE &rarr;</span>
+          </div>
+        </a>
 
-        <div class="card reveal" data-type="notes" data-sem="3">
-          <div class="sem-badge">Sem 3</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1bMeZlwaUmt26qlUtL8cHTkr6cDeeiVQ8?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View 3rd Semester Notes">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>3rd Semester</h3>
-            <p class="card-desc">Intermediate topics with expanded theoretical and practical depth.</p>
-            <span class="card-action">View Notes <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
+        <!-- Sem 3 -->
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1bMeZlwaUmt26qlUtL8cHTkr6cDeeiVQ8?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="3">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 03</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">3rd Semester</h3>
+            <p class="card-desc">Data structures, object-oriented concepts, computer architecture, and algorithms.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>NOTES ARCHIVE</span>
+            <span class="card-action-link">OPEN DRIVE &rarr;</span>
+          </div>
+        </a>
 
-        <div class="card reveal" data-type="notes" data-sem="4">
-          <div class="sem-badge">Sem 4</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1CyPFCm2tVKx39tJ_jyJsa7wzx43-fGUh?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View 4th Semester Notes">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>4th Semester</h3>
-            <p class="card-desc">Mid-degree material covering advanced applications.</p>
-            <span class="card-action">View Notes <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
+        <!-- Sem 4 -->
+        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1CyPFCm2tVKx39tJ_jyJsa7wzx43-fGUh?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="4">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 04</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">4th Semester</h3>
+            <p class="card-desc">Operating systems, database management systems, theory of computation, networks.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>NOTES ARCHIVE</span>
+            <span class="card-action-link">OPEN DRIVE &rarr;</span>
+          </div>
+        </a>
 
-        <div class="card reveal" data-type="notes" data-sem="5">
-          <div class="sem-badge">Sem 5</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1FdDf75yaKJtTlJdO9ccp8Dar0CgvyW50?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View 5th Semester Notes">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>5th Semester</h3>
-            <p class="card-desc">Specialisation begins — advanced electives and core branches.</p>
-            <span class="card-action">View Notes <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
+        <!-- Sem 5 -->
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1FdDf75yaKJtTlJdO9ccp8Dar0CgvyW50?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="5">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 05</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">5th Semester</h3>
+            <p class="card-desc">Software engineering, compiler design, web technologies, and discipline electives.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>NOTES ARCHIVE</span>
+            <span class="card-action-link">OPEN DRIVE &rarr;</span>
+          </div>
+        </a>
 
-        <div class="card reveal" data-type="notes" data-sem="6">
-          <div class="sem-badge">Sem 6</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View 6th Semester Notes">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>6th Semester</h3>
-            <p class="card-desc">Pre-final year — project work and elective-heavy curriculum.</p>
-            <span class="card-action">View Notes <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
+        <!-- Sem 6 -->
+        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="6">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 06</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">6th Semester</h3>
+            <p class="card-desc">Machine learning, cloud computing, distributed systems, and minor projects.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>NOTES ARCHIVE</span>
+            <span class="card-action-link">OPEN DRIVE &rarr;</span>
+          </div>
+        </a>
 
-        <div class="card reveal" data-type="notes" data-sem="7">
-          <div class="sem-badge">Sem 7</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View 7th Semester Notes">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>7th Semester</h3>
-            <p class="card-desc">Final year preparation with industry-focused material.</p>
-            <span class="card-action">View Notes <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
+        <!-- Sem 7 -->
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="7">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 07</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">7th Semester</h3>
+            <p class="card-desc">Cybersecurity, advanced analytics, industry capstones, and project phase one.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>NOTES ARCHIVE</span>
+            <span class="card-action-link">OPEN DRIVE &rarr;</span>
+          </div>
+        </a>
 
-        <div class="card reveal" data-type="notes" data-sem="8">
-          <div class="sem-badge">Sem 8</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="View 8th Semester Notes">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-            <h3>8th Semester</h3>
-            <p class="card-desc">Final stretch — thesis, dissertation, and comprehensive exams.</p>
-            <span class="card-action">View Notes <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── ASSIGNMENTS SECTION ── -->
-  <section id="assignments" class="section" data-section="assignments" aria-labelledby="assignments-heading">
-    <div class="section-inner">
-      <div class="section-header reveal">
-        <span class="section-label">Coursework</span>
-        <h2 id="assignments-heading">Assignments</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="cards-grid" id="assignmentsGrid">
-
-        <div class="card reveal" data-type="assignments" data-sem="1">
-          <div class="sem-badge">Sem 1</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1r8fxf8IS6_gobTGEzcpifryC9dNsFywy?usp=sharing" target="_blank" rel="noopener noreferrer">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            </div>
-            <h3>1st Semester</h3>
-            <p class="card-desc">Assignments from introductory modules and lab submissions.</p>
-            <span class="card-action">View Assignments <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
-
-        <div class="card reveal" data-type="assignments" data-sem="2">
-          <div class="sem-badge">Sem 2</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1hDeZNAMbaYvR2z-lK2xbc2G9ul_rU9D5?usp=sharing" target="_blank" rel="noopener noreferrer">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            </div>
-            <h3>2nd Semester</h3>
-            <p class="card-desc">Second year coursework, practicals, and project-based tasks.</p>
-            <span class="card-action">View Assignments <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
-
-        <div class="card reveal" data-type="assignments" data-sem="3">
-          <div class="sem-badge">Sem 3</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1Q7LmkJYACjG4j392QNZS9GJjgZCH19e3?usp=sharing" target="_blank" rel="noopener noreferrer">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            </div>
-            <h3>3rd Semester</h3>
-            <p class="card-desc">Mid-degree assignments with analytical and design components.</p>
-            <span class="card-action">View Assignments <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
-
-        <div class="card reveal" data-type="assignments" data-sem="4">
-          <div class="sem-badge">Sem 4</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1yhRVIxWHwqyvuPdfJgkQbhSQXdU3cky9?usp=sharing" target="_blank" rel="noopener noreferrer">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            </div>
-            <h3>4th Semester</h3>
-            <p class="card-desc">Advanced coursework emphasising applied problem solving.</p>
-            <span class="card-action">View Assignments <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
-
-        <div class="card reveal" data-type="assignments" data-sem="5">
-          <div class="sem-badge">Sem 5</div>
-          <a class="card-link" href="https://drive.google.com/drive/folders/1OULi7zjMRCr-SgjjJz4yQAerX0lDPMeA?usp=sharing" target="_blank" rel="noopener noreferrer">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-            </div>
-            <h3>5th Semester</h3>
-            <p class="card-desc">Elective-focused assignments and specialisation work.</p>
-            <span class="card-action">View Assignments <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
-
+        <!-- Sem 8 -->
+        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1lqSqlHIMjApJi-UdCFT25yRJO3qk2QIX?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="notes" data-sem="8">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 08</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">8th Semester</h3>
+            <p class="card-desc">Major thesis dissertation, comprehensive viva, and enterprise seminars.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>NOTES ARCHIVE</span>
+            <span class="card-action-link">OPEN DRIVE &rarr;</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ── PAPERS SECTION ── -->
-  <section id="papers" class="section" data-section="papers" aria-labelledby="papers-heading">
-    <div class="section-inner">
-      <div class="section-header reveal">
-        <span class="section-label">Exam Preparation</span>
-        <h2 id="papers-heading">Question Papers</h2>
-        <p>Mid-sem and end-sem papers across all semesters</p>
-        <div class="section-divider"></div>
-      </div>
-      <div class="papers-grid" id="papersGrid">
-
-        <div class="card paper-card reveal" data-type="papers">
-          <a class="card-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="Mid Semester Exam Papers">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>
-            <h3>Mid-Sem Exam Papers</h3>
-            <div class="sem-links">
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1E6TlUUrpKzzYeMzidkhAHg2QcrkrayVQ?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="1st Semester Mid-Sem Papers"><span class="sem-link-dot"></span>1st Semester</a>
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1ev5CAFyirkUjGObYwqHMNi_YNdOuqoPi?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="2nd Semester Mid-Sem Papers"><span class="sem-link-dot"></span>2nd Semester</a>
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1ryWzDBBHcced00CGLkbnrr3q-JjB-Aq1?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="3rd Semester Mid-Sem Papers"><span class="sem-link-dot"></span>3rd Semester</a>
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1XeuXhIycmm_mt1eidKAXqglB1zQipvjW?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="4th Semester Mid-Sem Papers"><span class="sem-link-dot"></span>4th Semester</a>
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1NY7vOviRy0BstHOTvsdGdhVFmIpHycbN?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="5th Semester Mid-Sem Papers"><span class="sem-link-dot"></span>5th Semester</a>
-            </div>
-          </a>
-        </div>
-
-        <div class="card paper-card reveal" data-type="papers">
-          <a class="card-link" href="#" target="_blank" rel="noopener noreferrer" aria-label="End Semester Exam Papers">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-            </div>
-            <h3>End-Sem Exam Papers</h3>
-            <div class="sem-links">
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1W_0nvlZbM2rxgAqD1-LXcpq2S4zPS7v_?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="1st Semester End-Sem Papers"><span class="sem-link-dot"></span>1st Semester</a>
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1Caro5X0O08yUIXAy3TI4DKXuZa-HfjkC?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="2nd Semester End-Sem Papers"><span class="sem-link-dot"></span>2nd Semester</a>
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1VsgaviKAE7FTTp3AkSkqxSrHmoNQsFBB?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="3rd Semester End-Sem Papers"><span class="sem-link-dot"></span>3rd Semester</a>
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1uZg2F2m3vIvlQkrfyBemgnlRYWGLcyoT?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="4th Semester End-Sem Papers"><span class="sem-link-dot"></span>4th Semester</a>
-              <a class="sem-link" href="https://drive.google.com/drive/folders/1cGMXOva5w_kV8xp2OAwYW9V15v5t9ia5?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="5th Semester End-Sem Papers"><span class="sem-link-dot"></span>5th Semester</a>
-            </div>
-          </a>
-        </div>
-
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION 2: ASSIGNMENTS
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section-block" id="assignments" data-category="assignments">
+    <div class="container">
+      <div class="section-header-wrap">
+        <span class="section-eyebrow">Dossier // 02</span>
+        <h2 class="section-main-title">Assignments</h2>
+        <div class="section-underline"></div>
       </div>
 
-      <div class="no-results" id="noResults" role="status">
-        <p>No resources found matching your search.</p>
+      <div class="resource-grid" id="assignmentsGrid">
+        <!-- Sem 1 -->
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1r8fxf8IS6_gobTGEzcpifryC9dNsFywy?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="1">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 01</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">1st Semester</h3>
+            <p class="card-desc">Practical lab manuals, weekly problem sets, and tutorial assignments.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>LAB &amp; HOMEWORK</span>
+            <span class="card-action-link">VIEW WORK &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Sem 2 -->
+        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1hDeZNAMbaYvR2z-lK2xbc2G9ul_rU9D5?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="2">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 02</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">2nd Semester</h3>
+            <p class="card-desc">Applied coding challenges, physics lab reports, and calculus exercise sets.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>LAB &amp; HOMEWORK</span>
+            <span class="card-action-link">VIEW WORK &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Sem 3 -->
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1Q7LmkJYACjG4j392QNZS9GJjgZCH19e3?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="3">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 03</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">3rd Semester</h3>
+            <p class="card-desc">Data structure programming assignments, digital logic circuit simulations.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>LAB &amp; HOMEWORK</span>
+            <span class="card-action-link">VIEW WORK &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Sem 4 -->
+        <a class="swatch-card burgundy-variant" href="https://drive.google.com/drive/folders/1yhRVIxWHwqyvuPdfJgkQbhSQXdU3cky9?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="4">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 04</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">4th Semester</h3>
+            <p class="card-desc">OS shell scripting submissions, SQL database project schema submissions.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>LAB &amp; HOMEWORK</span>
+            <span class="card-action-link">VIEW WORK &rarr;</span>
+          </div>
+        </a>
+
+        <!-- Sem 5 -->
+        <a class="swatch-card" href="https://drive.google.com/drive/folders/1OULi7zjMRCr-SgjjJz4yQAerX0lDPMeA?usp=sharing" target="_blank" rel="noopener noreferrer" data-type="assignments" data-sem="5">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">SEM 05</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">5th Semester</h3>
+            <p class="card-desc">Fullstack web applications, elective coursework, and algorithm implementations.</p>
+          </div>
+          <div class="card-meta-bottom">
+            <span>LAB &amp; HOMEWORK</span>
+            <span class="card-action-link">VIEW WORK &rarr;</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION 3: PRACTICE QUESTION PAPERS
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="section-block" id="papers" data-category="papers">
+    <div class="container">
+      <div class="section-header-wrap">
+        <span class="section-eyebrow">Dossier // 03</span>
+        <h2 class="section-main-title">Question Papers</h2>
+        <div class="section-underline"></div>
+      </div>
 
+      <div class="papers-grid-layout" id="papersGrid">
+        <!-- Mid-Semester Dossier -->
+        <div class="paper-dossier-card" data-type="papers">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">MID-SEM ARCHIVE</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">Mid-Semester Exams</h3>
+            <p class="card-desc">Official mid-term assessment question papers across all available semesters.</p>
+          </div>
+          <div class="paper-sem-list">
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1E6TlUUrpKzzYeMzidkhAHg2QcrkrayVQ?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>1st Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1ev5CAFyirkUjGObYwqHMNi_YNdOuqoPi?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>2nd Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1ryWzDBBHcced00CGLkbnrr3q-JjB-Aq1?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>3rd Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1XeuXhIycmm_mt1eidKAXqglB1zQipvjW?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>4th Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1NY7vOviRy0BstHOTvsdGdhVFmIpHycbN?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>5th Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+          </div>
+        </div>
 
-  <!-- ── Footer ── -->
+        <!-- End-Semester Dossier -->
+        <div class="paper-dossier-card burgundy-dossier" data-type="papers">
+          <div class="card-meta-top">
+            <span>@BlackBeetle</span>
+            <span class="card-badge-sem">END-SEM ARCHIVE</span>
+          </div>
+          <div class="card-center-content">
+            <h3 class="card-title">End-Semester Exams</h3>
+            <p class="card-desc">Comprehensive final university examination question sets for thorough preparation.</p>
+          </div>
+          <div class="paper-sem-list">
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1W_0nvlZbM2rxgAqD1-LXcpq2S4zPS7v_?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>1st Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1Caro5X0O08yUIXAy3TI4DKXuZa-HfjkC?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>2nd Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1VsgaviKAE7FTTp3AkSkqxSrHmoNQsFBB?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>3rd Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1uZg2F2m3vIvlQkrfyBemgnlRYWGLcyoT?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>4th Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+            <a class="paper-row-item" href="https://drive.google.com/drive/folders/1cGMXOva5w_kV8xp2OAwYW9V15v5t9ia5?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <span class="paper-sem-badge"><span class="paper-indicator"></span>5th Semester Papers</span>
+              <span>DRIVE &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════════════════════════ -->
   <footer>
-    <span class="footer-brand">Black Beetle</span>
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#notes">Notes</a>
-      <a href="#assignments">Assignments</a>
-      <a href="#papers">Papers</a>
-      <a href="https://github.com/anshu706/Black-Beetle" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <div class="container footer-inner">
+      <div class="footer-left-brand">
+        <div class="footer-brand-title">BLACK BEETLE</div>
+        <div class="footer-brand-sub">Oxide Burgundy &amp; Porcelain Sand Academic Vault</div>
+      </div>
+
+      <ul class="footer-nav-links">
+        <li><a href="#home" class="footer-nav-link">Home</a></li>
+        <li><a href="#notes" class="footer-nav-link">Notes</a></li>
+        <li><a href="#assignments" class="footer-nav-link">Assignments</a></li>
+        <li><a href="#papers" class="footer-nav-link">Question Papers</a></li>
+      </ul>
+
+      <div class="footer-meta-pill">
+        HEX #54252F &bull; HEX #E5D8C5
+      </div>
     </div>
-    <span class="footer-copy">Free for every student, forever.</span>
   </footer>
 
+  <!-- ══════════════════════════════════════════════════════════════
+       INTERACTIONS, SEARCH & ANIMATIONS
+       ══════════════════════════════════════════════════════════════ -->
   <script>
-    /* ══════════════════════════════════
-       PARTICLE SYSTEM — GPU-ready
-    ══════════════════════════════════ */
+    /* ══════════════════════════════════════════════════════════════
+       PARTICLE SYSTEM (Porcelain Sand Particles in Oxide Burgundy)
+       ══════════════════════════════════════════════════════════════ */
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let particles = [];
     let mouse = { x: null, y: null };
-    const MOUSE_RADIUS = 160;
-    const COUNT = window.innerWidth < 768 ? 40 : 80;
+    const MOUSE_RADIUS = 150;
+    const PARTICLE_COUNT = window.innerWidth < 768 ? 32 : 64;
+    let animFrameId;
 
-    function resize() {
-      canvas.width = innerWidth;
-      canvas.height = innerHeight;
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
-    resize();
-    window.addEventListener('resize', resize);
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
 
-    window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
-    window.addEventListener('mouseout', () => { mouse.x = null; mouse.y = null; });
-
-    // Pause when tab is hidden — saves battery
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) cancelAnimationFrame(rafId);
-      else animate();
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
     });
 
-    class Particle {
-      constructor() { this.reset(); }
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animFrameId);
+      } else {
+        animateParticles();
+      }
+    });
+
+    class ParticleNode {
+      constructor() {
+        this.reset();
+      }
       reset() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.r = Math.random() * 1.4 + 0.3;
-        this.bvx = (Math.random() - 0.5) * 0.25;
-        this.bvy = (Math.random() - 0.5) * 0.25;
-        this.vx = this.bvx;
-        this.vy = this.bvy;
-        this.alpha = Math.random() * 0.35 + 0.08;
+        this.radius = Math.random() * 1.5 + 0.4;
+        this.vxBase = (Math.random() - 0.5) * 0.25;
+        this.vyBase = (Math.random() - 0.5) * 0.25;
+        this.vx = this.vxBase;
+        this.vy = this.vyBase;
+        this.alpha = Math.random() * 0.25 + 0.08;
       }
       update() {
-        if (mouse.x !== null) {
-          const dx = mouse.x - this.x, dy = mouse.y - this.y;
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
           const dist = Math.hypot(dx, dy);
           if (dist < MOUSE_RADIUS) {
-            const f = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
-            this.vx -= (dx / dist) * f * 0.5;
-            this.vy -= (dy / dist) * f * 0.5;
+            const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
+            this.vx -= (dx / dist) * force * 0.45;
+            this.vy -= (dy / dist) * force * 0.45;
           }
         }
-        this.vx = this.vx * 0.96 + this.bvx * 0.04;
-        this.vy = this.vy * 0.96 + this.bvy * 0.04;
+        this.vx = this.vx * 0.96 + this.vxBase * 0.04;
+        this.vy = this.vy * 0.96 + this.vyBase * 0.04;
         this.x += this.vx;
         this.y += this.vy;
-        if (this.x < 0 || this.x > canvas.width) { this.bvx *= -1; this.vx *= -1; this.x = Math.max(0, Math.min(this.x, canvas.width)); }
-        if (this.y < 0 || this.y > canvas.height) { this.bvy *= -1; this.vy *= -1; this.y = Math.max(0, Math.min(this.y, canvas.height)); }
+
+        if (this.x < 0 || this.x > canvas.width) {
+          this.vxBase *= -1;
+          this.vx *= -1;
+          this.x = Math.max(0, Math.min(this.x, canvas.width));
+        }
+        if (this.y < 0 || this.y > canvas.height) {
+          this.vyBase *= -1;
+          this.vy *= -1;
+          this.y = Math.max(0, Math.min(this.y, canvas.height));
+        }
       }
       draw() {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(139,92,246,${this.alpha})`;
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(229, 216, 197, ${this.alpha})`;
         ctx.fill();
       }
     }
 
-    for (let i = 0; i < COUNT; i++) particles.push(new Particle());
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push(new ParticleNode());
+    }
 
-    let rafId;
-    function animate() {
+    function animateParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      // Draw connecting lines
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      // Subtle lines connecting close particles
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-        if (mouse.x !== null) {
-          const dx = particles[i].x - mouse.x, dy = particles[i].y - mouse.y;
-          const d = Math.hypot(dx, dy);
-          if (d < 150) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = `rgba(139,92,246,${0.12 * (1 - d / 150)})`;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
         for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
-          const d = Math.hypot(dx, dy);
-          if (d < 110) {
+          const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+          if (dist < 95) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(139,92,246,${0.05 * (1 - d / 110)})`;
-            ctx.lineWidth = 0.6;
+            ctx.strokeStyle = `rgba(229, 216, 197, ${0.045 * (1 - dist / 95)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
       }
-      rafId = requestAnimationFrame(animate);
+
+      animFrameId = requestAnimationFrame(animateParticles);
     }
-    animate();
+    animateParticles();
 
-    /* ══════════════════════════════════
-       ANIME.JS — Hero Entrance
-    ══════════════════════════════════ */
-    const heroTl = anime.timeline({ easing: 'spring(1, 80, 10, 0)' });
-    heroTl
-      .add({ targets: '#mainNav', opacity: [0, 1], translateY: [-20, 0], duration: 700 })
-      .add({ targets: '#heroEyebrow', opacity: [0, 1], translateY: [16, 0], duration: 600 }, '-=400')
-      .add({
-        targets: '#hero-heading',
-        opacity: [0, 1],
-        translateY: [40, 0],
-        duration: 900,
-        letterSpacing: ['-8px', '-3px'],
-      }, '-=300')
-      .add({ targets: '.hero-sub', opacity: [0, 1], translateY: [20, 0], duration: 700 }, '-=600')
-      .add({ targets: '.hero-actions', opacity: [0, 1], translateY: [16, 0], duration: 600 }, '-=500')
-      .add({ targets: '#scrollHint', opacity: [0, 1], duration: 400 }, '-=200');
-
-    /* ══════════════════════════════════
-       SCROLL REVEAL (IntersectionObserver)
-    ══════════════════════════════════ */
-    const revealObs = new IntersectionObserver(entries => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 60);
-          revealObs.unobserve(entry.target);
-        }
+    /* ══════════════════════════════════════════════════════════════
+       ANIME.JS INTRO TIMELINE FOR HERO
+       ══════════════════════════════════════════════════════════════ */
+    document.addEventListener('DOMContentLoaded', () => {
+      const tl = anime.timeline({
+        easing: 'spring(1, 80, 12, 0)'
       });
-    }, { threshold: 0.08 });
 
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+      tl.add({
+        targets: '#siteHeader',
+        translateY: [-20, 0],
+        opacity: [0, 1],
+        duration: 700
+      })
+      .add({
+        targets: '.hero-meta-row',
+        opacity: [0, 0.85],
+        translateY: [15, 0],
+        duration: 600
+      }, '-=400')
+      .add({
+        targets: '.ransom-letter',
+        translateY: [40, 0],
+        scale: [0.75, 1],
+        opacity: [0, 1],
+        delay: anime.stagger(50, { from: 'center' }),
+        duration: 900
+      }, '-=300')
+      .add({
+        targets: '.hero-subheading',
+        opacity: [0, 1],
+        translateY: [15, 0],
+        duration: 700
+      }, '-=500')
+      .add({
+        targets: '.swatch-display-card',
+        opacity: [0, 1],
+        scale: [0.94, 1],
+        duration: 900,
+        easing: 'easeOutExpo'
+      }, '-=400')
+      .add({
+        targets: '.hero-cta-btn',
+        opacity: [0, 1],
+        translateY: [10, 0],
+        duration: 600
+      }, '-=600');
 
-    /* ══════════════════════════════════
-       STAT COUNTER ANIMATION
-    ══════════════════════════════════ */
-    const statObs = new IntersectionObserver(entries => {
+      // Card tilt physics on hover
+      document.querySelectorAll('.swatch-card, .paper-dossier-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+          const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
+          card.style.transform = `translateY(-8px) perspective(700px) rotateX(${y * -5}deg) rotateY(${x * 5}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    });
+
+    /* ══════════════════════════════════════════════════════════════
+       STICKY NAV & MOBILE MENU
+       ══════════════════════════════════════════════════════════════ */
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    /* ══════════════════════════════════════════════════════════════
+       COUNTER ANIMATIONS ON SCROLL
+       ══════════════════════════════════════════════════════════════ */
+    const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count);
-          const suffix = el.dataset.suffix || '';
-          if (isNaN(target)) return;
-          anime({ targets: el, innerHTML: [0, target], round: 1, duration: 1600, easing: 'easeOutExpo',
-            update: () => { el.innerHTML = el.innerHTML + suffix; }
-          });
-          statObs.unobserve(el);
-        }
+        if (!entry.isIntersecting) return;
+        const target = entry.target;
+        const endVal = parseInt(target.getAttribute('data-count'));
+        const suffix = target.getAttribute('data-suffix') || '';
+        if (isNaN(endVal)) return;
+
+        anime({
+          targets: target,
+          innerHTML: [0, endVal],
+          round: 1,
+          duration: 1600,
+          easing: 'easeOutExpo',
+          update: () => {
+            target.innerHTML = target.innerHTML + suffix;
+          }
+        });
+        counterObserver.unobserve(target);
       });
     }, { threshold: 0.5 });
 
-    document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el));
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
-    /* ══════════════════════════════════
-       NAV SCROLL EFFECT
-    ══════════════════════════════════ */
-    const nav = document.getElementById('mainNav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+    /* ══════════════════════════════════════════════════════════════
+       INSTANT SEARCH & CATEGORY FILTER
+       ══════════════════════════════════════════════════════════════ */
+    const searchInput = document.getElementById('resourceSearch');
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const noResultsAlert = document.getElementById('noResultsAlert');
+    let currentFilter = 'all';
 
-    /* ══════════════════════════════════
-       MOBILE MENU
-    ══════════════════════════════════ */
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', open.toString());
-    });
+    function performFilter() {
+      const query = searchInput.value.toLowerCase().trim();
+      let totalVisible = 0;
 
-    /* ══════════════════════════════════
-       SMOOTH SCROLL (anchor links)
-    ══════════════════════════════════ */
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
-        if (!target) return;
-        e.preventDefault();
-        window.scrollTo({ top: target.offsetTop - 90, behavior: 'smooth' });
-        navLinks.classList.remove('open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    /* ══════════════════════════════════
-       SEARCH + FILTER
-    ══════════════════════════════════ */
-    const searchInput = document.getElementById('searchInput');
-    const chips = document.querySelectorAll('.chip');
-    const noResults = document.getElementById('noResults');
-    let activeFilter = 'all';
-
-    function normalise(str) { return str.toLowerCase().trim(); }
-
-    function runFilter() {
-      const query = normalise(searchInput.value);
-      const allCards = document.querySelectorAll('.card');
-      let visible = 0;
-
+      // Filter swatch cards & paper dossier cards
+      const allCards = document.querySelectorAll('.swatch-card, .paper-dossier-card');
       allCards.forEach(card => {
         const type = card.dataset.type || '';
         const sem = card.dataset.sem ? `sem ${card.dataset.sem} semester ${card.dataset.sem}` : '';
-        const text = normalise(card.textContent + ' ' + sem);
-        const matchFilter = activeFilter === 'all' || type === activeFilter;
-        const matchSearch = !query || text.includes(query);
+        const cardText = (card.textContent + ' ' + sem).toLowerCase();
 
-        if (matchFilter && matchSearch) {
+        const matchesCategory = (currentFilter === 'all') || (type === currentFilter);
+        const matchesQuery = !query || cardText.includes(query);
+
+        if (matchesCategory && matchesQuery) {
           card.classList.remove('hidden');
-          visible++;
+          totalVisible++;
         } else {
           card.classList.add('hidden');
         }
       });
 
-      // Show/hide section headers based on visible cards
-      document.querySelectorAll('.section').forEach(sec => {
-        const secType = sec.dataset.section;
-        if (!secType) return;
-        const visibleInSec = [...sec.querySelectorAll('.card')].some(c => !c.classList.contains('hidden'));
-        sec.style.display = visibleInSec ? '' : 'none';
+      // Hide empty section blocks
+      document.querySelectorAll('.section-block').forEach(sec => {
+        const secCat = sec.dataset.category;
+        if (!secCat) return;
+        const hasVisibleCards = [...sec.querySelectorAll('.swatch-card, .paper-dossier-card')].some(c => !c.classList.contains('hidden'));
+        sec.style.display = hasVisibleCards ? '' : 'none';
       });
 
-      noResults.style.display = visible === 0 ? 'block' : 'none';
+      noResultsAlert.style.display = totalVisible === 0 ? 'block' : 'none';
     }
 
-    searchInput.addEventListener('input', runFilter);
+    searchInput.addEventListener('input', performFilter);
 
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        activeFilter = chip.dataset.filter;
-        runFilter();
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentFilter = pill.dataset.filter;
+        performFilter();
       });
     });
-
-    /* ══════════════════════════════════
-       CARD MAGNETIC HOVER (Design Spell)
-    ══════════════════════════════════ */
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dx = (e.clientX - cx) / (rect.width / 2);
-        const dy = (e.clientY - cy) / (rect.height / 2);
-        card.style.setProperty('--rx', `${dy * -6}deg`);
-        card.style.setProperty('--ry', `${dx * 6}deg`);
-        card.style.transform = `translateY(-8px) scale(1.01) perspective(600px) rotateX(var(--rx)) rotateY(var(--ry))`;
-      });
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
-    });
-
-    /* ══════════════════════════════════
-       SCROLL HINT HIDE
-    ══════════════════════════════════ */
-    const scrollHint = document.getElementById('scrollHint');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        scrollHint.style.opacity = '0';
-        scrollHint.style.pointerEvents = 'none';
-      }
-    }, { passive: true, once: true });
   </script>
 </body>
 </html>
