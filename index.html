@@ -763,43 +763,108 @@
        ══════════════════════════════════════════════════════════════ */
     footer {
       border-top: 1px solid var(--border-light);
-      padding: 50px 0 35px;
+      padding: 60px 0 45px;
       background-color: var(--oxide-burgundy-deep);
       position: relative;
       z-index: 1;
+      text-align: center;
     }
 
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-left-brand {
+    .footer-centered {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
     }
 
     .footer-brand-title {
       font-family: var(--font-display);
-      font-size: 1.5rem;
-      letter-spacing: 2px;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
       color: var(--porcelain-sand);
+      text-transform: uppercase;
     }
 
-    .footer-brand-sub {
+    /* Icon Dock Container (Exact match to Image 3) */
+    .footer-icon-dock {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #0c0a0f;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 8px 10px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    /* Individual Button Box in Dock */
+    .dock-box-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #2c2b35 0%, #1a1921 100%);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 3px 8px rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .dock-box-btn:hover {
+      transform: translateY(-4px) scale(1.08);
+      background: linear-gradient(180deg, #3d3b48 0%, #252430 100%);
+      border-color: rgba(229, 216, 197, 0.4);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .dock-box-btn:focus-visible {
+      outline: 2px solid var(--porcelain-sand);
+      outline-offset: 3px;
+    }
+
+    /* Accessible Tooltip on Hover */
+    .dock-box-btn::before {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      background: rgba(14, 12, 16, 0.95);
+      border: 1px solid var(--border-light);
+      color: var(--porcelain-sand);
       font-family: var(--font-typewriter);
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      z-index: 10;
+    }
+
+    .dock-box-btn:hover::before,
+    .dock-box-btn:focus-visible::before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     .footer-nav-links {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       list-style: none;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .footer-nav-link {
@@ -814,12 +879,9 @@
       color: var(--porcelain-sand);
     }
 
-    .footer-meta-pill {
+    .footer-copy-text {
       font-family: var(--font-typewriter);
-      font-size: 0.75rem;
-      padding: 6px 14px;
-      border-radius: 100px;
-      border: 1px solid var(--border-light);
+      font-size: 0.78rem;
       color: var(--text-faint);
     }
 
@@ -884,12 +946,22 @@
         font-size: 2.2rem;
       }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .footer-icon-dock {
+        padding: 6px 8px;
+        gap: 6px;
+      }
+      .dock-box-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+      }
+      .dock-box-btn svg {
+        width: 18px;
+        height: 18px;
       }
       .footer-nav-links {
         flex-wrap: wrap;
+        gap: 16px;
       }
     }
   </style>
@@ -1400,11 +1472,47 @@
        FOOTER
        ══════════════════════════════════════════════════════════════ -->
   <footer>
-    <div class="container footer-inner">
-      <div class="footer-left-brand">
-        <div class="footer-brand-title">BLACK BEETLE</div>
-        <div class="footer-brand-sub">Oxide Burgundy &amp; Porcelain Sand Academic Vault</div>
-      </div>
+    <div class="container footer-centered">
+      <div class="footer-brand-title">BLACK BEETLE</div>
+
+      <!-- Centered Icon Navigation Dock (from Image 3) -->
+      <nav class="footer-icon-dock" aria-label="Quick resource navigation">
+        <a href="#home" class="dock-box-btn" aria-label="Home" data-tooltip="Home">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </a>
+
+        <a href="#notes" class="dock-box-btn" aria-label="Semester Notes" data-tooltip="Notes">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </a>
+
+        <a href="#assignments" class="dock-box-btn" aria-label="Coursework Assignments" data-tooltip="Assignments">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4 17 10 11 4 5"/>
+            <line x1="12" y1="19" x2="20" y2="19"/>
+          </svg>
+        </a>
+
+        <a href="#papers" class="dock-box-btn" aria-label="Question Papers" data-tooltip="Exam Papers">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+        </a>
+
+        <a href="https://github.com/anshu706/Black-Beetle" target="_blank" rel="noopener noreferrer" class="dock-box-btn" aria-label="GitHub Repository" data-tooltip="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z"/>
+            <path d="M19 16l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z"/>
+          </svg>
+        </a>
+      </nav>
 
       <ul class="footer-nav-links">
         <li><a href="#home" class="footer-nav-link">Home</a></li>
@@ -1413,8 +1521,8 @@
         <li><a href="#papers" class="footer-nav-link">Question Papers</a></li>
       </ul>
 
-      <div class="footer-meta-pill">
-        HEX #54252F &bull; HEX #E5D8C5
+      <div class="footer-copy-text">
+        &copy; 2026 Black Beetle &bull; Free Academic Resources
       </div>
     </div>
   </footer>
