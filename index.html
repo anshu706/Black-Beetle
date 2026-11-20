@@ -322,97 +322,6 @@
       margin: 0 auto 36px;
     }
 
-    /* Dual Tone Yin-Yang Swatch Component (Direct from Image 1) */
-    .swatch-display-card {
-      width: 100%;
-      max-width: 680px;
-      margin: 10px auto 44px;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-hover);
-      border: 1px solid var(--border-light);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    /* Top Half: Oxide Burgundy */
-    .swatch-half.top-half {
-      background-color: var(--oxide-burgundy-dark);
-      color: var(--porcelain-sand);
-      padding: 32px 36px 36px;
-      border-bottom: 2px dashed rgba(229, 216, 197, 0.15);
-      position: relative;
-    }
-
-    /* Bottom Half: Porcelain Sand */
-    .swatch-half.bottom-half {
-      background-color: var(--porcelain-sand);
-      color: var(--oxide-burgundy);
-      padding: 36px 36px 32px;
-      position: relative;
-    }
-
-    .swatch-corner-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--font-typewriter);
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-
-    .swatch-half.top-half .swatch-corner-bar {
-      color: rgba(229, 216, 197, 0.7);
-    }
-    .swatch-half.bottom-half .swatch-corner-bar {
-      color: rgba(84, 37, 47, 0.75);
-    }
-
-    .swatch-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.4rem, 6vw, 4.4rem);
-      line-height: 0.95;
-      letter-spacing: 4px;
-      margin: 12px 0 20px;
-      text-transform: uppercase;
-    }
-
-    .swatch-footer-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: var(--font-typewriter);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-
-    /* The Iconic Yin-Yang Center Medallion (from Image 1) */
-    .yin-yang-connector {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 68px;
-      height: 68px;
-      z-index: 10;
-      border-radius: 50%;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.45);
-      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-      cursor: pointer;
-    }
-
-    .yin-yang-connector:hover {
-      transform: translate(-50%, -50%) rotate(180deg) scale(1.12);
-    }
-
-    .yin-yang-svg {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
 
     /* Hero CTA Button */
     .hero-cta-btn {
@@ -945,13 +854,7 @@
         align-items: center;
         gap: 6px;
       }
-      .swatch-corner-bar, .swatch-footer-bar {
-        font-size: 0.75rem;
-      }
-      .yin-yang-connector {
-        width: 52px;
-        height: 52px;
-      }
+
     }
 
     @media (max-width: 640px) {
@@ -980,12 +883,7 @@
       .letter-text {
         font-size: 2.2rem;
       }
-      .swatch-display-card {
-        border-radius: var(--radius-lg);
-      }
-      .swatch-half.top-half, .swatch-half.bottom-half {
-        padding: 24px 20px;
-      }
+
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -1097,48 +995,6 @@
         Every semester note, coursework assignment, and previous year exam paper — systematically cataloged and freely accessible.
       </p>
 
-      <!-- ══════════════════════════════════════════════════════════
-           THE SIGNATURE YIN-YANG CARD (Direct from User Image 1)
-           ══════════════════════════════════════════════════════════ -->
-      <div class="swatch-display-card">
-        <!-- Center Interlocking Yin-Yang Medallion -->
-        <div class="yin-yang-connector" title="Oxide Burgundy & Porcelain Sand Harmony">
-          <svg class="yin-yang-svg" viewBox="0 0 100 100">
-            <!-- Outer circle -->
-            <path d="M 50,0 A 50,50 0 0,1 50,100 A 25,25 0 0,1 50,50 A 25,25 0 0,0 50,0" fill="#54252F"/>
-            <path d="M 50,100 A 50,50 0 0,1 50,0 A 25,25 0 0,1 50,50 A 25,25 0 0,0 50,100" fill="#E5D8C5"/>
-            <!-- Inner dots -->
-            <circle cx="50" cy="25" r="7" fill="#E5D8C5"/>
-            <circle cx="50" cy="75" r="7" fill="#54252F"/>
-          </svg>
-        </div>
-
-        <!-- Top Swatch: Oxide Burgundy -->
-        <div class="swatch-half top-half">
-          <div class="swatch-corner-bar">
-            <span>@BlackBeetle</span>
-            <span>©2026</span>
-          </div>
-          <h2 class="swatch-title">OXIDE BURGUNDY</h2>
-          <div class="swatch-footer-bar">
-            <span>HEX &nbsp;#54252F</span>
-            <span>RGB &nbsp;84, 37, 47</span>
-          </div>
-        </div>
-
-        <!-- Bottom Swatch: Porcelain Sand -->
-        <div class="swatch-half bottom-half">
-          <div class="swatch-corner-bar">
-            <span>@BlackBeetle</span>
-            <span>©2026</span>
-          </div>
-          <h2 class="swatch-title">PORCELAIN SAND</h2>
-          <div class="swatch-footer-bar">
-            <span>HEX &nbsp;#E5D8C5</span>
-            <span>RGB &nbsp;229, 216, 197</span>
-          </div>
-        </div>
-      </div>
 
       <!-- Action Button -->
       <a href="#notes" class="hero-cta-btn">
@@ -1717,18 +1573,11 @@
         duration: 700
       }, '-=500')
       .add({
-        targets: '.swatch-display-card',
-        opacity: [0, 1],
-        scale: [0.94, 1],
-        duration: 900,
-        easing: 'easeOutExpo'
-      }, '-=400')
-      .add({
         targets: '.hero-cta-btn',
         opacity: [0, 1],
         translateY: [10, 0],
         duration: 600
-      }, '-=600');
+      }, '-=400');
 
       // Card tilt physics on hover
       document.querySelectorAll('.swatch-card, .paper-dossier-card').forEach(card => {
